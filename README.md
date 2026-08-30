@@ -1,28 +1,28 @@
-# WebMCP Builder — Formação 2
+# WebMCP Integrator — Formação 3
 
-Formação prática dedicada ao papel **WebMCP Builder**. O projeto ensina a sair do diagnóstico de prontidão e publicar ferramentas WebMCP declarativas e imperativas sem remover a experiência humana do site.
+Formação prática dedicada ao papel **WebMCP Integrator**. O projeto ensina a sair do diagnóstico de prontidão e publicar ferramentas WebMCP declarativas e imperativas sem remover a experiência humana do site.
 
 ## O que está incluído
 
-- arquitetura de 4 capítulos Builder, cada um com seus próprios módulos;
+- arquitetura de 4 capítulos Integrator, cada um com seus próprios módulos;
 - Capítulo 1 publicado com 4 módulos completos, 24 tópicos e cerca de 12 horas;
 - progresso, dúvidas, anotações, temas e exportação/importação da jornada;
-- mini-site INEMA Cursos para comparar pessoa, automação visual e WebMCP;
+- laboratório local para auditar catálogo, schema, risco e migração;
 - validador avançado de catálogos, tools e JSON Schemas;
 - geração estática pronta para GitHub Pages e Vercel.
 
 ## Capítulos e módulos
 
-O menu superior navega pelos capítulos da formação Builder. A numeração segue `capítulo.módulo`: `1.1`, `1.2`, `2.1` e assim por diante.
+O menu superior navega pelos capítulos da formação Integrator. A numeração segue `capítulo.módulo`: `1.1`, `1.2`, `2.1` e assim por diante.
 
 O Capítulo 1 está publicado com estes módulos:
 
-1. WebMCP, MCP e a Web agêntica;
-2. ambiente de desenvolvimento;
-3. API declarativa;
-4. API imperativa.
+1. Design de ferramentas;
+2. Estado, erros e recuperação;
+3. Migração de sites existentes;
+4. Frameworks modernos.
 
-Os capítulos 2 (Design de ferramentas), 3 (Integração com a aplicação) e 4 (Qualidade de Builder) já estão mapeados no índice e serão publicados progressivamente.
+Os capítulos 2 (Migração em escala), 3 (Ecossistemas) e 4 (Entrega Integrator) já estão mapeados no índice e serão publicados progressivamente.
 
 ## Executar localmente
 
@@ -47,9 +47,6 @@ O laboratório em `labs/validador-tools.html` recebe um descritor JSON auditáve
 
 O scanner é local, determinístico e não registra nem executa tools. Campos de governança como `risk`, `fallback` e `resultExample` não pertencem ao draft WebMCP; servem para revisar prontidão operacional.
 
-## Laboratório do Módulo 1.1
-
-`labs/inema-cursos.html` mantém a mesma busca em três modos: pessoa, agente visual e WebMCP. A chamada do agente é uma simulação didática explicitamente identificada; em ambientes compatíveis, a página também tenta registrar `buscar_cursos` pela API real.
 
 ## Especificação e limites
 
