@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Hands-on WebMCP Integrator training with four modules, labs, and an advanced tools and schemas validator." name="description"/>
+<meta content="webmcp-zero-expert" name="inema-course"/>
+<script>
+    (function(){try{var h=document.documentElement,p=JSON.parse(localStorage.getItem('inema.prefs')||'{}'),t=p.theme||(localStorage.getItem('theme')==='light'?'claro':'inema-dark');if(t==='claro'||t==='sepia')h.classList.remove('dark');else h.classList.add('dark');if(['sepia','foco','contraste'].includes(t))h.setAttribute('data-theme',t);else h.removeAttribute('data-theme');if(p.fontScale)h.style.fontSize=p.fontScale+'%';}catch(e){document.documentElement.classList.add('dark')}})();
+  </script>
+<title>Training 3 | WebMCP Integrator</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>tailwind.config={darkMode:'class',theme:{extend:{colors:{primary:'#FACC15',dark:{900:'#111827',800:'#1f2937',700:'#374151',600:'#4b5563'}}}}};</script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href=".././favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href=".././assets/site.css" rel="stylesheet"/>
+<link href=".././assets/learn.css" rel="stylesheet"/>
+<script data-inema-manifest="" type="application/json">
+{
+  "course": "webmcp-zero-expert",
+  "tracks": [
+    {
+      "n": "2",
+      "title": "WebMCP Integrator",
+      "modules": [
+        {
+          "id": "2-1",
+          "title": "Design de ferramentas",
+          "topics": 6,
+          "href": "https://inematds.github.io/webmcp-3-integrator/curso/integrator/modulo-2-1.html"
+        },
+        {
+          "id": "2-2",
+          "title": "Estado, erros e recuperação",
+          "topics": 6,
+          "href": "https://inematds.github.io/webmcp-3-integrator/curso/integrator/modulo-2-2.html"
+        },
+        {
+          "id": "2-3",
+          "title": "Migração de sites existentes",
+          "topics": 6,
+          "href": "https://inematds.github.io/webmcp-3-integrator/curso/integrator/modulo-2-3.html"
+        },
+        {
+          "id": "2-4",
+          "title": "Frameworks modernos",
+          "topics": 6,
+          "href": "https://inematds.github.io/webmcp-3-integrator/curso/integrator/modulo-2-4.html"
+        }
+      ]
+    }
+  ]
+}
+</script>
+<link href="https://inematds.github.io/webmcp-3-integrator/" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/webmcp-3-integrator/en/" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/webmcp-3-integrator/es/" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="./" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">EN</a><a href="../es/" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<a class="skip" href="#conteudo">Skip to content</a>
+<nav aria-label="Main navigation" class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center min-h-16 gap-3">
+<div class="flex items-center gap-3 min-w-0">
+<a aria-label="WebMCP Integrator — introduction" class="flex items-center gap-2 text-yellow-400 hover:text-yellow-300 flex-shrink-0" href="./index.html">
+<span aria-hidden="true" class="text-2xl">⬡</span><span class="font-bold hidden sm:inline">WebMCP Integrator</span><span class="font-bold sm:hidden">W3</span>
+</a>
+<span class="text-neutral-600 hidden sm:inline">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium hidden sm:inline" href="https://inema.club" rel="noreferrer" target="_blank">INEMA.CLUB</a>
+</div>
+<div class="flex items-center gap-1">
+<div class="hidden lg:flex items-center gap-1">
+<a aria-current="page" class="phase-chip px-2.5 py-1.5 rounded-lg text-sm font-semibold" href="./index.html#capitulo-1">Ch. 1<span class="hidden xl:inline"> · Core</span></a>
+<a class="phase-chip px-2.5 py-1.5 rounded-lg text-sm text-neutral-400 hover:text-blue-400" href="./index.html#capitulo-2">Ch. 2<span class="hidden xl:inline"> · Migration</span></a>
+<a class="phase-chip px-2.5 py-1.5 rounded-lg text-sm text-neutral-400 hover:text-blue-400" href="./index.html#capitulo-3">Ch. 3<span class="hidden xl:inline"> · Ecosystems</span></a>
+<a class="phase-chip px-2.5 py-1.5 rounded-lg text-sm text-neutral-400 hover:text-blue-400" href="./index.html#capitulo-4">Ch. 4<span class="hidden xl:inline"> · Delivery</span></a>
+<a class="phase-chip px-2.5 py-1.5 rounded-lg text-sm text-sky-400 hover:text-sky-300" href="./labs/validador-tools.html">Labs</a>
+</div>
+<button aria-label="Open my journey" class="p-2 rounded-lg text-neutral-300 hover:bg-dark-700" data-inema-journey-open="" type="button"><span aria-hidden="true">◷</span><span class="inema-journey-badge" data-count="0" data-inema-journey-badge=""></span></button>
+<div class="relative">
+<button aria-expanded="false" aria-label="Adjust appearance" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600" data-inema-appearance-toggle="[data-inema-appearance]" type="button">◑</button>
+<div class="inema-appearance-pop right-0 mt-3" data-inema-appearance="">
+<p class="text-sm font-semibold mb-2">Theme</p>
+<div class="inema-segment"><button data-inema-set-theme="inema-dark">Dark</button><button data-inema-set-theme="claro">Light</button><button data-inema-set-theme="sepia">Sepia</button><button data-inema-set-theme="foco">Focus</button><button data-inema-set-theme="contraste">Contrast</button></div>
+<p class="text-sm font-semibold mt-4 mb-2">Size</p>
+<div class="inema-segment"><button data-inema-set-fontscale="100">A</button><button data-inema-set-fontscale="112">A+</button><button data-inema-set-fontscale="125">A++</button></div>
+</div>
+</div>
+<button aria-label="Switch between light and dark themes" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600" id="theme-toggle">
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-light-icon" viewbox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+</button>
+</div>
+</div>
+<div aria-label="WebMCP Integrator chapters" class="lg:hidden flex items-center gap-1 overflow-x-auto pb-2">
+<a aria-current="page" class="phase-chip flex-shrink-0 px-3 py-2 rounded-lg text-xs font-semibold" href="./index.html#capitulo-1">Ch. 1</a>
+<a class="phase-chip flex-shrink-0 px-3 py-2 rounded-lg text-xs text-neutral-400 hover:text-blue-400" href="./index.html#capitulo-2">Ch. 2</a>
+<a class="phase-chip flex-shrink-0 px-3 py-2 rounded-lg text-xs text-neutral-400 hover:text-blue-400" href="./index.html#capitulo-3">Ch. 3</a>
+<a class="phase-chip flex-shrink-0 px-3 py-2 rounded-lg text-xs text-neutral-400 hover:text-blue-400" href="./index.html#capitulo-4">Ch. 4</a>
+<a class="phase-chip flex-shrink-0 px-3 py-2 rounded-lg text-xs text-sky-400" href="./labs/validador-tools.html">Labs</a>
+</div>
+</div>
+</nav>
+<main id="conteudo">
+<header class="hero-shell integrator-hero border-b border-dark-600">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 lg:py-20 grid lg:grid-cols-[.9fr_1.1fr] gap-12 items-center">
+<div><span class="inline-block px-3 py-1 bg-blue-500/20 text-blue-400 text-xs font-semibold rounded-full mb-4">TRAINING 3 · PHASE 2</span><h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight">WebMCP Integrator</h1><p class="text-lg text-neutral-300 mt-5 leading-relaxed">Turn user journeys and existing sites into coherent, recoverable WebMCP integrations that are ready to evolve.</p><div class="flex justify-start flex-wrap gap-3 mt-7"><a class="px-5 py-3 rounded-lg bg-blue-600 hover:bg-blue-500 text-white font-semibold" href="#mapa">Start the training</a><a class="px-5 py-3 rounded-lg border border-sky-500/30 text-sky-400 hover:bg-sky-500/10 font-semibold" href="labs/validador-tools.html">Open advanced scanner</a></div></div>
+<div class="rounded-2xl border border-blue-500/30 bg-dark-900/40 p-4 overflow-hidden">
+<svg aria-label="Current site flow to WebMCP tools to Agent + person" class="w-full h-auto" role="img" viewbox="0 0 900 260">
+<defs>
+<lineargradient id="integrator-hero-grad" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#60a5fa"></stop><stop offset="1" stop-color="#3b82f6"></stop></lineargradient>
+<filter height="180%" id="integrator-hero-glow" width="180%" x="-40%" y="-40%"><fegaussianblur result="b" stddeviation="1.8"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
+<pattern height="28" id="integrator-hero-grid" patternunits="userSpaceOnUse" width="28"><circle cx="1.2" cy="1.2" fill="#60a5fa" opacity=".12" r="1.2"></circle></pattern>
+<marker id="integrator-hero-arrow" markerheight="9" markerwidth="9" orient="auto" refx="7" refy="4.5"><path d="M0,0 L8,4.5 L0,9 L2.4,4.5 Z" fill="#38bdf8"></path></marker>
+</defs>
+<rect fill="url(#integrator-hero-grid)" height="260" width="900"></rect>
+<path d="M250 130 H365 M535 130 H650" marker-end="url(#integrator-hero-arrow)" opacity=".65" stroke="#38bdf8" stroke-width="1.8"></path>
+<g><rect fill="#0e1622" height="76" rx="14" stroke="#60a5fa" stroke-width="2" width="205" x="45" y="92"></rect><text fill="#60a5fa" font-family="Inter,sans-serif" font-size="17" font-weight="600" text-anchor="middle" x="147" y="125">Current site</text><text fill="#bfdbfe" font-family="Inter,sans-serif" font-size="12" text-anchor="middle" x="147" y="148">observable input</text></g>
+<g filter="url(#integrator-hero-glow)"><rect fill="url(#integrator-hero-grad)" height="96" rx="14" stroke="#60a5fa" stroke-width="2" width="170" x="365" y="82"></rect></g><text fill="#06281d" font-family="Inter,sans-serif" font-size="17" font-weight="600" text-anchor="middle" x="450" y="125">WebMCP tools</text><text fill="#064e3b" font-family="Inter,sans-serif" font-size="12" text-anchor="middle" x="450" y="149">explicit contract</text>
+<g><rect fill="#0e1b26" height="76" rx="14" stroke="#38bdf8" stroke-width="2" width="205" x="650" y="92"></rect><text fill="#9ad6ff" font-family="Inter,sans-serif" font-size="17" font-weight="600" text-anchor="middle" x="752" y="125">Agent + person</text><text fill="#bfe6ff" font-family="Inter,sans-serif" font-size="12" text-anchor="middle" x="752" y="148">verifiable result</text></g>
+</svg>
+</div>
+</div>
+</header>
+<section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-12"><div class="bg-dark-800 p-4 rounded-xl border border-dark-600"><strong class="text-2xl text-blue-400">4</strong><p class="text-sm text-neutral-400">Integrator chapters</p></div><div class="bg-dark-800 p-4 rounded-xl border border-dark-600"><strong class="text-2xl text-blue-400">4</strong><p class="text-sm text-neutral-400">Available modules</p></div><div class="bg-dark-800 p-4 rounded-xl border border-dark-600"><strong class="text-2xl text-blue-400">24</strong><p class="text-sm text-neutral-400">Published topics</p></div><div class="bg-dark-800 p-4 rounded-xl border border-dark-600"><strong class="text-2xl text-blue-400">1</strong><p class="text-sm text-neutral-400">Lab</p></div></div>
+<div class="bg-dark-800 border border-blue-500/30 rounded-xl p-6 mb-12"><div class="flex flex-col md:flex-row md:items-center justify-between gap-5"><div><p class="text-xs text-blue-400 font-semibold">SHARED PROGRESS</p><h2 class="text-2xl font-bold mt-2">Your journey continues across repositories</h2><p class="text-neutral-400 mt-2">The same Formação 1 identifier records read items, questions, and notes. On GitHub Pages, the origin is shared; JSON keeps the portable fallback.</p></div><div class="inema-meter min-w-64" data-inema-meter="trilha:2"><div class="flex justify-between gap-3 text-sm text-neutral-400 mb-2"><span data-inema-meter-frac="">0 of 24</span><span data-inema-meter-pct="">0%</span></div><div class="inema-bar"><div class="inema-bar__fill" data-inema-meter-fill=""></div></div></div></div></div>
+<section class="mb-12" id="mapa"><h2 class="text-2xl font-bold mb-2">Integrator course map</h2><p class="text-neutral-400 mb-6">The top navigates by chapter. Within each chapter, modules follow the chapter.module numbering.</p><div class="grid lg:grid-cols-2 gap-5"><article class="chapter-map bg-dark-800 border border-blue-500/30 rounded-xl p-6" id="capitulo-1">
+<div class="flex flex-wrap items-start justify-between gap-4 mb-5"><div><p class="text-sm font-semibold text-blue-400">CHAPTER 1</p><h3 class="text-xl font-bold mt-1">Integration core</h3><p class="text-sm text-neutral-400 mt-2 max-w-2xl">Four modules to design, recover, migrate, and integrate.</p></div><span class="px-3 py-1 rounded-full text-xs bg-blue-500/20 text-blue-400">Available</span></div>
+<ol class="grid sm:grid-cols-2 gap-3"><li><a class="module-row flex gap-3 rounded-lg bg-dark-700/60 p-3 hover:bg-dark-700" href="curso/integrator/modulo-2-1.html"><strong class="text-blue-400 text-sm">1.1</strong><span class="text-sm text-neutral-300">Tool design</span></a></li><li><a class="module-row flex gap-3 rounded-lg bg-dark-700/60 p-3 hover:bg-dark-700" href="curso/integrator/modulo-2-2.html"><strong class="text-blue-400 text-sm">1.2</strong><span class="text-sm text-neutral-300">State, errors, and recovery</span></a></li><li><a class="module-row flex gap-3 rounded-lg bg-dark-700/60 p-3 hover:bg-dark-700" href="curso/integrator/modulo-2-3.html"><strong class="text-blue-400 text-sm">1.3</strong><span class="text-sm text-neutral-300">Migrating existing sites</span></a></li><li><a class="module-row flex gap-3 rounded-lg bg-dark-700/60 p-3 hover:bg-dark-700" href="curso/integrator/modulo-2-4.html"><strong class="text-blue-400 text-sm">1.4</strong><span class="text-sm text-neutral-300">Modern frameworks</span></a></li></ol>
+</article>
+<article class="chapter-map bg-dark-800 border border-dark-600 rounded-xl p-6" id="capitulo-2">
+<div class="flex flex-wrap items-start justify-between gap-4 mb-5"><div><p class="text-sm font-semibold text-neutral-400">CHAPTER 2</p><h3 class="text-xl font-bold mt-1">Large-scale migration</h3><p class="text-sm text-neutral-400 mt-2 max-w-2xl">Multi-page inventory, portfolio prioritization, and batch rollout.</p></div><span class="px-3 py-1 rounded-full text-xs bg-dark-700 text-neutral-400">Next</span></div>
+<ol class="grid sm:grid-cols-2 gap-3"><li><div class="module-row flex gap-3 rounded-lg bg-dark-700/30 p-3"><strong class="text-blue-400 text-sm">2.1</strong><span class="text-sm text-neutral-300">Journey crawler</span></div></li><li><div class="module-row flex gap-3 rounded-lg bg-dark-700/30 p-3"><strong class="text-blue-400 text-sm">2.2</strong><span class="text-sm text-neutral-300">Enterprise catalog</span></div></li><li><div class="module-row flex gap-3 rounded-lg bg-dark-700/30 p-3"><strong class="text-blue-400 text-sm">2.3</strong><span class="text-sm text-neutral-300">Migration in waves</span></div></li><li><div class="module-row flex gap-3 rounded-lg bg-dark-700/30 p-3"><strong class="text-blue-400 text-sm">2.4</strong><span class="text-sm text-neutral-300">Change governance</span></div></li></ol>
+</article>
+<article class="chapter-map bg-dark-800 border border-dark-600 rounded-xl p-6" id="capitulo-3">
+<div class="flex flex-wrap items-start justify-between gap-4 mb-5"><div><p class="text-sm font-semibold text-neutral-400">CHAPTER 3</p><h3 class="text-xl font-bold mt-1">Ecosystems</h3><p class="text-sm text-neutral-400 mt-2 max-w-2xl">Design systems, CMS, e-commerce, and composite applications.</p></div><span class="px-3 py-1 rounded-full text-xs bg-dark-700 text-neutral-400">Next</span></div>
+<ol class="grid sm:grid-cols-2 gap-3"><li><div class="module-row flex gap-3 rounded-lg bg-dark-700/30 p-3"><strong class="text-blue-400 text-sm">3.1</strong><span class="text-sm text-neutral-300">CMS and content</span></div></li><li><div class="module-row flex gap-3 rounded-lg bg-dark-700/30 p-3"><strong class="text-blue-400 text-sm">3.2</strong><span class="text-sm text-neutral-300">Commerce and checkout</span></div></li><li><div class="module-row flex gap-3 rounded-lg bg-dark-700/30 p-3"><strong class="text-blue-400 text-sm">3.3</strong><span class="text-sm text-neutral-300">Microfrontends</span></div></li><li><div class="module-row flex gap-3 rounded-lg bg-dark-700/30 p-3"><strong class="text-blue-400 text-sm">3.4</strong><span class="text-sm text-neutral-300">Embedded applications</span></div></li></ol>
+</article>
+<article class="chapter-map bg-dark-800 border border-dark-600 rounded-xl p-6" id="capitulo-4">
+<div class="flex flex-wrap items-start justify-between gap-4 mb-5"><div><p class="text-sm font-semibold text-neutral-400">CHAPTER 4</p><h3 class="text-xl font-bold mt-1">Integrator deliverable</h3><p class="text-sm text-neutral-400 mt-2 max-w-2xl">Quality, documentation, handoff, and applied project.</p></div><span class="px-3 py-1 rounded-full text-xs bg-dark-700 text-neutral-400">Next</span></div>
+<ol class="grid sm:grid-cols-2 gap-3"><li><div class="module-row flex gap-3 rounded-lg bg-dark-700/30 p-3"><strong class="text-blue-400 text-sm">4.1</strong><span class="text-sm text-neutral-300">Integration contract</span></div></li><li><div class="module-row flex gap-3 rounded-lg bg-dark-700/30 p-3"><strong class="text-blue-400 text-sm">4.2</strong><span class="text-sm text-neutral-300">Compatibility matrix</span></div></li><li><div class="module-row flex gap-3 rounded-lg bg-dark-700/30 p-3"><strong class="text-blue-400 text-sm">4.3</strong><span class="text-sm text-neutral-300">Operational handoff</span></div></li><li><div class="module-row flex gap-3 rounded-lg bg-dark-700/30 p-3"><strong class="text-blue-400 text-sm">4.4</strong><span class="text-sm text-neutral-300">Integrator final project</span></div></li></ol>
+</article></div></section>
+<section class="mb-12"><h2 class="text-2xl font-bold mb-6">Chapter 1 · available modules</h2><div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4"><a class="group bg-dark-800 rounded-xl border border-dark-600 hover:border-blue-500/30 p-5" href="#modulo-2-1">
+<div class="flex items-center justify-between mb-2"><span class="text-blue-400 font-bold text-sm">1.1</span><span class="text-xs text-neutral-500">3h</span></div>
+<h3 class="font-semibold mb-1 group-hover:text-blue-400">🧭 Tool design</h3><p class="text-xs text-neutral-400">One intent per contract</p>
+</a>
+<a class="group bg-dark-800 rounded-xl border border-dark-600 hover:border-blue-500/30 p-5" href="#modulo-2-2">
+<div class="flex items-center justify-between mb-2"><span class="text-blue-400 font-bold text-sm">1.2</span><span class="text-xs text-neutral-500">3h</span></div>
+<h3 class="font-semibold mb-1 group-hover:text-blue-400">🔄 State, errors, and recovery</h3><p class="text-xs text-neutral-400">The agent knows how to continue</p>
+</a>
+<a class="group bg-dark-800 rounded-xl border border-dark-600 hover:border-blue-500/30 p-5" href="#modulo-2-3">
+<div class="flex items-center justify-between mb-2"><span class="text-blue-400 font-bold text-sm">1.3</span><span class="text-xs text-neutral-500">3h</span></div>
+<h3 class="font-semibold mb-1 group-hover:text-blue-400">🏗️ Migrating existing sites</h3><p class="text-xs text-neutral-400">Adapt without redesigning everything</p>
+</a>
+<a class="group bg-dark-800 rounded-xl border border-dark-600 hover:border-blue-500/30 p-5" href="#modulo-2-4">
+<div class="flex items-center justify-between mb-2"><span class="text-blue-400 font-bold text-sm">1.4</span><span class="text-xs text-neutral-500">3h</span></div>
+<h3 class="font-semibold mb-1 group-hover:text-blue-400">⚛️ Modern frameworks</h3><p class="text-xs text-neutral-400">Lifecycle without duplication</p>
+</a></div></section>
+<section class="mb-12"><div class="bg-gradient-to-br from-blue-900/30 to-dark-800 border border-blue-500/30 rounded-xl p-6"><p class="text-xs text-blue-400 font-semibold">CROSS-CUTTING LAB</p><h2 class="text-2xl font-bold mt-2">WebMCP Migration Studio</h2><p class="text-neutral-300 mt-3 max-w-3xl">Paste an auditable catalog in JSON to receive a diagnosis of its contract, clarity, schema, lifecycle, risk, and example output. The lab does not register or execute tools.</p><div class="flex justify-start mt-5"><a class="px-5 py-3 rounded-lg bg-blue-600 hover:bg-blue-500 text-white font-semibold" href="labs/validador-tools.html">Audit a migration</a></div></div></section>
+<h2 class="text-2xl font-bold mb-6">Detailed content</h2>
+<article class="bg-dark-800 rounded-xl border border-dark-600 mb-8 overflow-hidden" data-inema-module="2-1" data-inema-track="2" id="modulo-2-1">
+<header class="p-6 border-b border-dark-600">
+<div class="flex items-center justify-between mb-2"><span class="text-blue-400 font-bold">1.1</span><span class="text-xs text-neutral-500">3h</span></div>
+<h3 class="text-2xl font-bold mb-2">🧭 Tool design</h3><p class="text-neutral-400">Turn human journeys into small, distinct tools that are easy to choose.</p>
+<div class="inema-meter mt-4" data-inema-meter="modulo:2-1"><div class="flex justify-between gap-3 text-sm text-neutral-400 mb-2"><span data-inema-meter-frac="">0 of 6</span><span data-inema-meter-pct="">0%</span></div><div class="inema-bar"><div class="inema-bar__fill" data-inema-meter-fill=""></div></div></div>
+</header>
+<div class="divide-y divide-dark-600"><div class="topic-item">
+<button aria-controls="painel-2-1-1" aria-expanded="false" class="w-full px-6 py-4 flex items-start gap-3 hover:bg-dark-700/50 text-left" onclick="toggleTopic(this)" type="button">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
+<span aria-hidden="true" class="text-lg">🎯</span>
+<span><strong>Start with the critical journey</strong><span class="text-neutral-500 text-sm ml-2">— observable objective</span></span>
+</button>
+<div class="topic-explanation px-6 pb-5" id="painel-2-1-1">
+<div class="bg-dark-700/50 rounded-lg p-5 space-y-4 ml-9">
+<div><span class="text-blue-400 font-semibold">What it is:</span><p class="text-neutral-300 text-sm mt-1">A tool starts with a real user goal, not with every existing button or function in the code.</p></div>
+<div><span class="text-blue-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm mt-1">Mapping the start, decision, effect, and evidence prevents the integration from copying the interface without understanding its intent.</p></div>
+<div><span class="text-blue-400 font-semibold">Key concepts:</span><p class="text-neutral-300 text-sm mt-1">observable objective · initial state · expected effect · final evidence</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button aria-controls="painel-2-1-2" aria-expanded="false" class="w-full px-6 py-4 flex items-start gap-3 hover:bg-dark-700/50 text-left" onclick="toggleTopic(this)" type="button">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
+<span aria-hidden="true" class="text-lg">🔍</span>
+<span><strong>Give each tool one responsibility</strong><span class="text-neutral-500 text-sm ml-2">— no overlap</span></span>
+</button>
+<div class="topic-explanation px-6 pb-5" id="painel-2-1-2">
+<div class="bg-dark-700/50 rounded-lg p-5 space-y-4 ml-9">
+<div><span class="text-blue-400 font-semibold">What it is:</span><p class="text-neutral-300 text-sm mt-1">Small tools fulfill a complete intent and do not compete for the same call.</p></div>
+<div><span class="text-blue-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm mt-1">When two descriptions seem to answer the same request, the LLM has to guess, and the correct selection rate drops.</p></div>
+<div><span class="text-blue-400 font-semibold">Key concepts:</span><p class="text-neutral-300 text-sm mt-1">no overlap · precise verb · clear boundary · own output</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button aria-controls="painel-2-1-3" aria-expanded="false" class="w-full px-6 py-4 flex items-start gap-3 hover:bg-dark-700/50 text-left" onclick="toggleTopic(this)" type="button">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
+<span aria-hidden="true" class="text-lg">🧩</span>
+<span><strong>Design inputs for the agent</strong><span class="text-neutral-500 text-sm ml-2">— minimum fields</span></span>
+</button>
+<div class="topic-explanation px-6 pb-5" id="painel-2-1-3">
+<div class="bg-dark-700/50 rounded-lg p-5 space-y-4 ml-9">
+<div><span class="text-blue-400 font-semibold">What it is:</span><p class="text-neutral-300 text-sm mt-1">The input should request only the necessary data and represent closed alternatives with enums when possible.</p></div>
+<div><span class="text-blue-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm mt-1">Focused schemas reduce invented arguments, but actual validation is still required in execute and on the backend.</p></div>
+<div><span class="text-blue-400 font-semibold">Key concepts:</span><p class="text-neutral-300 text-sm mt-1">minimum fields · useful enum · concrete description · real validation</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button aria-controls="painel-2-1-4" aria-expanded="false" class="w-full px-6 py-4 flex items-start gap-3 hover:bg-dark-700/50 text-left" onclick="toggleTopic(this)" type="button">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
+<span aria-hidden="true" class="text-lg">🛡️</span>
+<span><strong>Choose clear IDs and names</strong><span class="text-neutral-500 text-sm ml-2">— descriptive name</span></span>
+</button>
+<div class="topic-explanation px-6 pb-5" id="painel-2-1-4">
+<div class="bg-dark-700/50 rounded-lg p-5 space-y-4 ml-9">
+<div><span class="text-blue-400 font-semibold">What it is:</span><p class="text-neutral-300 text-sm mt-1">The agent may know the name spoken by the user before it knows the system's internal identifier.</p></div>
+<div><span class="text-blue-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm mt-1">Separating search, resolution, and action avoids requiring opaque IDs too early or accepting ambiguous names too late.</p></div>
+<div><span class="text-blue-400 font-semibold">Key concepts:</span><p class="text-neutral-300 text-sm mt-1">name discovers · ID identifies · explicit resolution · ambiguity handled</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button aria-controls="painel-2-1-5" aria-expanded="false" class="w-full px-6 py-4 flex items-start gap-3 hover:bg-dark-700/50 text-left" onclick="toggleTopic(this)" type="button">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span>
+<span aria-hidden="true" class="text-lg">👤</span>
+<span><strong>Record only what makes sense now</strong><span class="text-neutral-500 text-sm ml-2">— contextual catalog</span></span>
+</button>
+<div class="topic-explanation px-6 pb-5" id="painel-2-1-5">
+<div class="bg-dark-700/50 rounded-lg p-5 space-y-4 ml-9">
+<div><span class="text-blue-400 font-semibold">What it is:</span><p class="text-neutral-300 text-sm mt-1">The catalog should track the route, selection, authentication, and current stage of the journey.</p></div>
+<div><span class="text-blue-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm mt-1">Fewer available tools mean less context and fewer impossible calls.</p></div>
+<div><span class="text-blue-400 font-semibold">Key concepts:</span><p class="text-neutral-300 text-sm mt-1">contextual catalog · dynamic registration · visible session · cleanup</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button aria-controls="painel-2-1-6" aria-expanded="false" class="w-full px-6 py-4 flex items-start gap-3 hover:bg-dark-700/50 text-left" onclick="toggleTopic(this)" type="button">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">6</span>
+<span aria-hidden="true" class="text-lg">✅</span>
+<span><strong>Refactor a poor catalog</strong><span class="text-neutral-500 text-sm ml-2">— inventory</span></span>
+</button>
+<div class="topic-explanation px-6 pb-5" id="painel-2-1-6">
+<div class="bg-dark-700/50 rounded-lg p-5 space-y-4 ml-9">
+<div><span class="text-blue-400 font-semibold">What it is:</span><p class="text-neutral-300 text-sm mt-1">Generic and overlapping names need to become a sequence that reveals intent and effect.</p></div>
+<div><span class="text-blue-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm mt-1">The implementation proves that the catalog guides the agent and also explains the flow to product, security, and QA.</p></div>
+<div><span class="text-blue-400 font-semibold">Key concepts:</span><p class="text-neutral-300 text-sm mt-1">inventory · refactoring · selection test · documentation</p></div>
+</div>
+</div>
+</div></div>
+<div class="p-4 bg-dark-700/30 flex justify-start flex-wrap gap-3">
+<button class="px-4 py-2 text-sm bg-dark-600 hover:bg-dark-700 rounded-lg" onclick="openModal('modal-2-1')" type="button">View in Modal</button>
+<a class="px-4 py-2 text-sm bg-blue-600 hover:bg-blue-500 text-white rounded-lg" href="curso/integrator/modulo-2-1.html">View Complete</a>
+</div>
+</article>
+<article class="bg-dark-800 rounded-xl border border-dark-600 mb-8 overflow-hidden" data-inema-module="2-2" data-inema-track="2" id="modulo-2-2">
+<header class="p-6 border-b border-dark-600">
+<div class="flex items-center justify-between mb-2"><span class="text-blue-400 font-bold">1.2</span><span class="text-xs text-neutral-500">3h</span></div>
+<h3 class="text-2xl font-bold mb-2">🔄 State, errors, and recovery</h3><p class="text-neutral-400">Model dependencies, stale state, idempotency, timeouts, cancellation, and recovery.</p>
+<div class="inema-meter mt-4" data-inema-meter="modulo:2-2"><div class="flex justify-between gap-3 text-sm text-neutral-400 mb-2"><span data-inema-meter-frac="">0 of 6</span><span data-inema-meter-pct="">0%</span></div><div class="inema-bar"><div class="inema-bar__fill" data-inema-meter-fill=""></div></div></div>
+</header>
+<div class="divide-y divide-dark-600"><div class="topic-item">
+<button aria-controls="painel-2-2-1" aria-expanded="false" class="w-full px-6 py-4 flex items-start gap-3 hover:bg-dark-700/50 text-left" onclick="toggleTopic(this)" type="button">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
+<span aria-hidden="true" class="text-lg">🎯</span>
+<span><strong>Model the journey as states</strong><span class="text-neutral-500 text-sm ml-2">— explicit state</span></span>
+</button>
+<div class="topic-explanation px-6 pb-5" id="painel-2-2-1">
+<div class="bg-dark-700/50 rounded-lg p-5 space-y-4 ml-9">
+<div><span class="text-blue-400 font-semibold">What it is:</span><p class="text-neutral-300 text-sm mt-1">Each step states what has already happened, which actions are available, and which transition is valid.</p></div>
+<div><span class="text-blue-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm mt-1">Without a state model, the agent may confirm before starting or repeat an effect that has already completed.</p></div>
+<div><span class="text-blue-400 font-semibold">Key concepts:</span><p class="text-neutral-300 text-sm mt-1">explicit state · valid transition · precondition · effect</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button aria-controls="painel-2-2-2" aria-expanded="false" class="w-full px-6 py-4 flex items-start gap-3 hover:bg-dark-700/50 text-left" onclick="toggleTopic(this)" type="button">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
+<span aria-hidden="true" class="text-lg">🔍</span>
+<span><strong>Separate recoverable and definitive errors</strong><span class="text-neutral-500 text-sm ml-2">— stable code</span></span>
+</button>
+<div class="topic-explanation px-6 pb-5" id="painel-2-2-2">
+<div class="bg-dark-700/50 rounded-lg p-5 space-y-4 ml-9">
+<div><span class="text-blue-400 font-semibold">What it is:</span><p class="text-neutral-300 text-sm mt-1">Recoverable errors indicate a next action; terminal errors end the attempt with a verifiable reason.</p></div>
+<div><span class="text-blue-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm mt-1">Classification prevents blind loops and lets the agent explain real alternatives to the user.</p></div>
+<div><span class="text-blue-400 font-semibold">Key concepts:</span><p class="text-neutral-300 text-sm mt-1">stable code · actionable message · next action · honest ending</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button aria-controls="painel-2-2-3" aria-expanded="false" class="w-full px-6 py-4 flex items-start gap-3 hover:bg-dark-700/50 text-left" onclick="toggleTopic(this)" type="button">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
+<span aria-hidden="true" class="text-lg">🧩</span>
+<span><strong>Protect against stale state</strong><span class="text-neutral-500 text-sm ml-2">— revalidation</span></span>
+</button>
+<div class="topic-explanation px-6 pb-5" id="painel-2-2-3">
+<div class="bg-dark-700/50 rounded-lg p-5 space-y-4 ml-9">
+<div><span class="text-blue-400 font-semibold">What it is:</span><p class="text-neutral-300 text-sm mt-1">The state used to make a decision can change before execution, especially for job openings, prices, and permissions.</p></div>
+<div><span class="text-blue-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm mt-1">Revalidating at the time of the effect prevents a tool from using an old snapshot as current authorization.</p></div>
+<div><span class="text-blue-400 font-semibold">Key concepts:</span><p class="text-neutral-300 text-sm mt-1">revalidation · state version · conflict · new reading</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button aria-controls="painel-2-2-4" aria-expanded="false" class="w-full px-6 py-4 flex items-start gap-3 hover:bg-dark-700/50 text-left" onclick="toggleTopic(this)" type="button">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
+<span aria-hidden="true" class="text-lg">🛡️</span>
+<span><strong>Make mutations idempotent</strong><span class="text-neutral-500 text-sm ml-2">— idempotency key</span></span>
+</button>
+<div class="topic-explanation px-6 pb-5" id="painel-2-2-4">
+<div class="bg-dark-700/50 rounded-lg p-5 space-y-4 ml-9">
+<div><span class="text-blue-400 font-semibold">What it is:</span><p class="text-neutral-300 text-sm mt-1">An idempotency key lets you repeat a request without duplicating a subscription, charge, or submission.</p></div>
+<div><span class="text-blue-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm mt-1">Agents, networks, and users can repeat calls; the operation needs to distinguish a retry from a new effect.</p></div>
+<div><span class="text-blue-400 font-semibold">Key concepts:</span><p class="text-neutral-300 text-sm mt-1">idempotency key · safe retry · previous result · single effect</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button aria-controls="painel-2-2-5" aria-expanded="false" class="w-full px-6 py-4 flex items-start gap-3 hover:bg-dark-700/50 text-left" onclick="toggleTopic(this)" type="button">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span>
+<span aria-hidden="true" class="text-lg">👤</span>
+<span><strong>Cancel and set a time limit</strong><span class="text-neutral-500 text-sm ml-2">— AbortSignal</span></span>
+</button>
+<div class="topic-explanation px-6 pb-5" id="painel-2-2-5">
+<div class="bg-dark-700/50 rounded-lg p-5 space-y-4 ml-9">
+<div><span class="text-blue-400 font-semibold">What it is:</span><p class="text-neutral-300 text-sm mt-1">AbortSignal and timeout end work that has lost relevance or exceeded the operational window.</p></div>
+<div><span class="text-blue-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm mt-1">True cancellation preserves resources and prevents the interface from showing success after the person has given up.</p></div>
+<div><span class="text-blue-400 font-semibold">Key concepts:</span><p class="text-neutral-300 text-sm mt-1">AbortSignal · timeout · visual cleanup · canceled result</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button aria-controls="painel-2-2-6" aria-expanded="false" class="w-full px-6 py-4 flex items-start gap-3 hover:bg-dark-700/50 text-left" onclick="toggleTopic(this)" type="button">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">6</span>
+<span aria-hidden="true" class="text-lg">✅</span>
+<span><strong>Test recovery end to end</strong><span class="text-neutral-500 text-sm ml-2">— scenarios</span></span>
+</button>
+<div class="topic-explanation px-6 pb-5" id="painel-2-2-6">
+<div class="bg-dark-700/50 rounded-lg p-5 space-y-4 ml-9">
+<div><span class="text-blue-400 font-semibold">What it is:</span><p class="text-neutral-300 text-sm mt-1">The integration must prove the happy path, invalid order, retry, cancellation, and concurrent changes.</p></div>
+<div><span class="text-blue-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm mt-1">A failure matrix turns resilience into verifiable behavior, not architectural intent.</p></div>
+<div><span class="text-blue-400 font-semibold">Key concepts:</span><p class="text-neutral-300 text-sm mt-1">scenarios · evidence · reproduction · regression</p></div>
+</div>
+</div>
+</div></div>
+<div class="p-4 bg-dark-700/30 flex justify-start flex-wrap gap-3">
+<button class="px-4 py-2 text-sm bg-dark-600 hover:bg-dark-700 rounded-lg" onclick="openModal('modal-2-2')" type="button">View in Modal</button>
+<a class="px-4 py-2 text-sm bg-blue-600 hover:bg-blue-500 text-white rounded-lg" href="curso/integrator/modulo-2-2.html">View Complete</a>
+</div>
+</article>
+<article class="bg-dark-800 rounded-xl border border-dark-600 mb-8 overflow-hidden" data-inema-module="2-3" data-inema-track="2" id="modulo-2-3">
+<header class="p-6 border-b border-dark-600">
+<div class="flex items-center justify-between mb-2"><span class="text-blue-400 font-bold">1.3</span><span class="text-xs text-neutral-500">3h</span></div>
+<h3 class="text-2xl font-bold mb-2">🏗️ Migrating existing sites</h3><p class="text-neutral-400">Audit workflows, reuse existing logic, and introduce WebMCP as a progressive enhancement.</p>
+<div class="inema-meter mt-4" data-inema-meter="modulo:2-3"><div class="flex justify-between gap-3 text-sm text-neutral-400 mb-2"><span data-inema-meter-frac="">0 of 6</span><span data-inema-meter-pct="">0%</span></div><div class="inema-bar"><div class="inema-bar__fill" data-inema-meter-fill=""></div></div></div>
+</header>
+<div class="divide-y divide-dark-600"><div class="topic-item">
+<button aria-controls="painel-2-3-1" aria-expanded="false" class="w-full px-6 py-4 flex items-start gap-3 hover:bg-dark-700/50 text-left" onclick="toggleTopic(this)" type="button">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
+<span aria-hidden="true" class="text-lg">🎯</span>
+<span><strong>Create a functional inventory</strong><span class="text-neutral-500 text-sm ml-2">— forms</span></span>
+</button>
+<div class="topic-explanation px-6 pb-5" id="painel-2-3-1">
+<div class="bg-dark-700/50 rounded-lg p-5 space-y-4 ml-9">
+<div><span class="text-blue-400 font-semibold">What it is:</span><p class="text-neutral-300 text-sm mt-1">Map forms, handlers, services, endpoints, and states before proposing tools.</p></div>
+<div><span class="text-blue-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm mt-1">The audit reveals where the rule already exists and where the interface contains logic that needs to be separated.</p></div>
+<div><span class="text-blue-400 font-semibold">Key concepts:</span><p class="text-neutral-300 text-sm mt-1">forms · JS functions · APIs · state</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button aria-controls="painel-2-3-2" aria-expanded="false" class="w-full px-6 py-4 flex items-start gap-3 hover:bg-dark-700/50 text-left" onclick="toggleTopic(this)" type="button">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
+<span aria-hidden="true" class="text-lg">🔍</span>
+<span><strong>Prioritize user journeys by value and risk</strong><span class="text-neutral-500 text-sm ml-2">— value</span></span>
+</button>
+<div class="topic-explanation px-6 pb-5" id="painel-2-3-2">
+<div class="bg-dark-700/50 rounded-lg p-5 space-y-4 ml-9">
+<div><span class="text-blue-400 font-semibold">What it is:</span><p class="text-neutral-300 text-sm mt-1">Not every feature deserves to be migrated first; weigh frequency, value, stability, and reversibility.</p></div>
+<div><span class="text-blue-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm mt-1">The right scope delivers learning early without starting with a critical or poorly understood action.</p></div>
+<div><span class="text-blue-400 font-semibold">Key concepts:</span><p class="text-neutral-300 text-sm mt-1">value · frequency · risk · stability</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button aria-controls="painel-2-3-3" aria-expanded="false" class="w-full px-6 py-4 flex items-start gap-3 hover:bg-dark-700/50 text-left" onclick="toggleTopic(this)" type="button">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
+<span aria-hidden="true" class="text-lg">🧩</span>
+<span><strong>Extract interface logic</strong><span class="text-neutral-500 text-sm ml-2">— shared service</span></span>
+</button>
+<div class="topic-explanation px-6 pb-5" id="painel-2-3-3">
+<div class="bg-dark-700/50 rounded-lg p-5 space-y-4 ml-9">
+<div><span class="text-blue-400 font-semibold">What it is:</span><p class="text-neutral-300 text-sm mt-1">The same domain function should serve both human clicks and WebMCP execution.</p></div>
+<div><span class="text-blue-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm mt-1">Sharing the logic prevents divergence between the visual flow and the agent’s path.</p></div>
+<div><span class="text-blue-400 font-semibold">Key concepts:</span><p class="text-neutral-300 text-sm mt-1">common service · adapter UI · adapter tool · single rule</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button aria-controls="painel-2-3-4" aria-expanded="false" class="w-full px-6 py-4 flex items-start gap-3 hover:bg-dark-700/50 text-left" onclick="toggleTopic(this)" type="button">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
+<span aria-hidden="true" class="text-lg">🛡️</span>
+<span><strong>Create thin wrappers</strong><span class="text-neutral-500 text-sm ml-2">— translation</span></span>
+</button>
+<div class="topic-explanation px-6 pb-5" id="painel-2-3-4">
+<div class="bg-dark-700/50 rounded-lg p-5 space-y-4 ml-9">
+<div><span class="text-blue-400 font-semibold">What it is:</span><p class="text-neutral-300 text-sm mt-1">The tool translates arguments, calls the existing service, updates the UI, and returns a structured response.</p></div>
+<div><span class="text-blue-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm mt-1">Small wrappers are easier to review and don't recreate the application inside the WebMCP registry.</p></div>
+<div><span class="text-blue-400 font-semibold">Key concepts:</span><p class="text-neutral-300 text-sm mt-1">translation · existing service · synchronized UI · return</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button aria-controls="painel-2-3-5" aria-expanded="false" class="w-full px-6 py-4 flex items-start gap-3 hover:bg-dark-700/50 text-left" onclick="toggleTopic(this)" type="button">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span>
+<span aria-hidden="true" class="text-lg">👤</span>
+<span><strong>Publish with progressive enhancement</strong><span class="text-neutral-500 text-sm ml-2">— feature detection</span></span>
+</button>
+<div class="topic-explanation px-6 pb-5" id="painel-2-3-5">
+<div class="bg-dark-700/50 rounded-lg p-5 space-y-4 ml-9">
+<div><span class="text-blue-400 font-semibold">What it is:</span><p class="text-neutral-300 text-sm mt-1">The human workflow remains functional when WebMCP is unavailable or disabled.</p></div>
+<div><span class="text-blue-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm mt-1">An experimental technology is added as an additional capability, with monitoring and rollback.</p></div>
+<div><span class="text-blue-400 font-semibold">Key concepts:</span><p class="text-neutral-300 text-sm mt-1">feature detection · fallback · rollout · rollback</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button aria-controls="painel-2-3-6" aria-expanded="false" class="w-full px-6 py-4 flex items-start gap-3 hover:bg-dark-700/50 text-left" onclick="toggleTopic(this)" type="button">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">6</span>
+<span aria-hidden="true" class="text-lg">✅</span>
+<span><strong>Deliver the migration dossier</strong><span class="text-neutral-500 text-sm ml-2">— map</span></span>
+</button>
+<div class="topic-explanation px-6 pb-5" id="painel-2-3-6">
+<div class="bg-dark-700/50 rounded-lg p-5 space-y-4 ml-9">
+<div><span class="text-blue-400 font-semibold">What it is:</span><p class="text-neutral-300 text-sm mt-1">The dossier connects inventory, catalog, risks, implementation, tests, and publication plan.</p></div>
+<div><span class="text-blue-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm mt-1">The migration becomes reviewable by product, development, security, and operations.</p></div>
+<div><span class="text-blue-400 font-semibold">Key concepts:</span><p class="text-neutral-300 text-sm mt-1">map · risk · functional proof · rollout</p></div>
+</div>
+</div>
+</div></div>
+<div class="p-4 bg-dark-700/30 flex justify-start flex-wrap gap-3">
+<button class="px-4 py-2 text-sm bg-dark-600 hover:bg-dark-700 rounded-lg" onclick="openModal('modal-2-3')" type="button">View in Modal</button>
+<a class="px-4 py-2 text-sm bg-blue-600 hover:bg-blue-500 text-white rounded-lg" href="curso/integrator/modulo-2-3.html">View Complete</a>
+</div>
+</article>
+<article class="bg-dark-800 rounded-xl border border-dark-600 mb-8 overflow-hidden" data-inema-module="2-4" data-inema-track="2" id="modulo-2-4">
+<header class="p-6 border-b border-dark-600">
+<div class="flex items-center justify-between mb-2"><span class="text-blue-400 font-bold">1.4</span><span class="text-xs text-neutral-500">3h</span></div>
+<h3 class="text-2xl font-bold mb-2">⚛️ Modern frameworks</h3><p class="text-neutral-400">Integrate WebMCP with SPAs, React, Angular, and Next.js with predictable registration and cleanup.</p>
+<div class="inema-meter mt-4" data-inema-meter="modulo:2-4"><div class="flex justify-between gap-3 text-sm text-neutral-400 mb-2"><span data-inema-meter-frac="">0 of 6</span><span data-inema-meter-pct="">0%</span></div><div class="inema-bar"><div class="inema-bar__fill" data-inema-meter-fill=""></div></div></div>
+</header>
+<div class="divide-y divide-dark-600"><div class="topic-item">
+<button aria-controls="painel-2-4-1" aria-expanded="false" class="w-full px-6 py-4 flex items-start gap-3 hover:bg-dark-700/50 text-left" onclick="toggleTopic(this)" type="button">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
+<span aria-hidden="true" class="text-lg">🎯</span>
+<span><strong>Use plain JavaScript as a reference</strong><span class="text-neutral-500 text-sm ml-2">— pure function</span></span>
+</button>
+<div class="topic-explanation px-6 pb-5" id="painel-2-4-1">
+<div class="bg-dark-700/50 rounded-lg p-5 space-y-4 ml-9">
+<div><span class="text-blue-400 font-semibold">What it is:</span><p class="text-neutral-300 text-sm mt-1">A framework-free implementation makes registration, dependencies, and cleanup explicit.</p></div>
+<div><span class="text-blue-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm mt-1">The reference reduces magic and helps diagnose problems hidden by hooks or dependency injection.</p></div>
+<div><span class="text-blue-400 font-semibold">Key concepts:</span><p class="text-neutral-300 text-sm mt-1">pure function · explicit registration · AbortController · baseline</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button aria-controls="painel-2-4-2" aria-expanded="false" class="w-full px-6 py-4 flex items-start gap-3 hover:bg-dark-700/50 text-left" onclick="toggleTopic(this)" type="button">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
+<span aria-hidden="true" class="text-lg">🔍</span>
+<span><strong>Model an idempotent React hook</strong><span class="text-neutral-500 text-sm ml-2">— useEffect</span></span>
+</button>
+<div class="topic-explanation px-6 pb-5" id="painel-2-4-2">
+<div class="bg-dark-700/50 rounded-lg p-5 space-y-4 ml-9">
+<div><span class="text-blue-400 font-semibold">What it is:</span><p class="text-neutral-300 text-sm mt-1">The effect registers tools for the current state, and cleanup aborts the previous registrations.</p></div>
+<div><span class="text-blue-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm mt-1">Strict Mode, rerenders, and dependency changes must not duplicate names in the catalog.</p></div>
+<div><span class="text-blue-400 font-semibold">Key concepts:</span><p class="text-neutral-300 text-sm mt-1">useEffect · dependencies · cleanup · Strict Mode</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button aria-controls="painel-2-4-3" aria-expanded="false" class="w-full px-6 py-4 flex items-start gap-3 hover:bg-dark-700/50 text-left" onclick="toggleTopic(this)" type="button">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
+<span aria-hidden="true" class="text-lg">🧩</span>
+<span><strong>Wrap it in an Angular service</strong><span class="text-neutral-500 text-sm ml-2">— service</span></span>
+</button>
+<div class="topic-explanation px-6 pb-5" id="painel-2-4-3">
+<div class="bg-dark-700/50 rounded-lg p-5 space-y-4 ml-9">
+<div><span class="text-blue-400 font-semibold">What it is:</span><p class="text-neutral-300 text-sm mt-1">A service receives dependencies, registers the tools, and exposes cleanup to the component or route.</p></div>
+<div><span class="text-blue-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm mt-1">Dependency injection keeps rules testable and separate from the visual lifecycle.</p></div>
+<div><span class="text-blue-400 font-semibold">Key concepts:</span><p class="text-neutral-300 text-sm mt-1">service · DI · OnDestroy · testability</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button aria-controls="painel-2-4-4" aria-expanded="false" class="w-full px-6 py-4 flex items-start gap-3 hover:bg-dark-700/50 text-left" onclick="toggleTopic(this)" type="button">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
+<span aria-hidden="true" class="text-lg">🛡️</span>
+<span><strong>Respect the client and server in Next.js</strong><span class="text-neutral-500 text-sm ml-2">— use client</span></span>
+</button>
+<div class="topic-explanation px-6 pb-5" id="painel-2-4-4">
+<div class="bg-dark-700/50 rounded-lg p-5 space-y-4 ml-9">
+<div><span class="text-blue-400 font-semibold">What it is:</span><p class="text-neutral-300 text-sm mt-1">document.modelContext only exists on the client and after the document is active.</p></div>
+<div><span class="text-blue-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm mt-1">Separating the client component, loading, and server API avoids accessing Document during SSR.</p></div>
+<div><span class="text-blue-400 font-semibold">Key concepts:</span><p class="text-neutral-300 text-sm mt-1">use client · hydration · SSR · API route</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button aria-controls="painel-2-4-5" aria-expanded="false" class="w-full px-6 py-4 flex items-start gap-3 hover:bg-dark-700/50 text-left" onclick="toggleTopic(this)" type="button">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span>
+<span aria-hidden="true" class="text-lg">👤</span>
+<span><strong>Update tools when changing routes</strong><span class="text-neutral-500 text-sm ml-2">— router</span></span>
+</button>
+<div class="topic-explanation px-6 pb-5" id="painel-2-4-5">
+<div class="bg-dark-700/50 rounded-lg p-5 space-y-4 ml-9">
+<div><span class="text-blue-400 font-semibold">What it is:</span><p class="text-neutral-300 text-sm mt-1">SPAs need to remove tools from the previous route and register only the capabilities of the new screen.</p></div>
+<div><span class="text-blue-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm mt-1">A stale catalog is stale UI: the agent sees an action that the person can no longer perform.</p></div>
+<div><span class="text-blue-400 font-semibold">Key concepts:</span><p class="text-neutral-300 text-sm mt-1">router · unmount · current catalog · transition</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button aria-controls="painel-2-4-6" aria-expanded="false" class="w-full px-6 py-4 flex items-start gap-3 hover:bg-dark-700/50 text-left" onclick="toggleTopic(this)" type="button">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">6</span>
+<span aria-hidden="true" class="text-lg">✅</span>
+<span><strong>Compare implementations using the same test</strong><span class="text-neutral-500 text-sm ml-2">— same contract</span></span>
+</button>
+<div class="topic-explanation px-6 pb-5" id="painel-2-4-6">
+<div class="bg-dark-700/50 rounded-lg p-5 space-y-4 ml-9">
+<div><span class="text-blue-400 font-semibold">What it is:</span><p class="text-neutral-300 text-sm mt-1">Different frameworks must fulfill the same observable contract for registration, execution, UI, and cleanup.</p></div>
+<div><span class="text-blue-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm mt-1">A shared matrix separates differences in ergonomics from actual differences in behavior.</p></div>
+<div><span class="text-blue-400 font-semibold">Key concepts:</span><p class="text-neutral-300 text-sm mt-1">same contract · same tests · proven cleanup · compatibility</p></div>
+</div>
+</div>
+</div></div>
+<div class="p-4 bg-dark-700/30 flex justify-start flex-wrap gap-3">
+<button class="px-4 py-2 text-sm bg-dark-600 hover:bg-dark-700 rounded-lg" onclick="openModal('modal-2-4')" type="button">View in Modal</button>
+<a class="px-4 py-2 text-sm bg-blue-600 hover:bg-blue-500 text-white rounded-lg" href="curso/integrator/modulo-2-4.html">View Complete</a>
+</div>
+</article>
+<section class="mt-14 bg-dark-800 border border-blue-500/30 rounded-xl p-8"><p class="text-blue-400 text-xs font-semibold">INTEGRATOR CONTINUITY</p><h2 class="text-2xl font-bold mt-2">Next: tool design</h2><p class="text-neutral-300 mt-3">After the fundamentals, the same training continues in chapters 2, 3, and 4. Each chapter will have its own modules; the student remains in the Integrator role while expanding scale and governance.</p><div class="flex justify-start flex-wrap gap-3 mt-6"><button class="px-5 py-3 rounded-lg bg-dark-700 hover:bg-dark-600" data-inema-journey-open="" type="button">Save / export journey</button><a class="px-5 py-3 rounded-lg bg-blue-600 hover:bg-blue-500 text-white" href="#capitulo-2">View chapter 2 modules</a></div></section>
+</section>
+</main>
+<div aria-label="Module 1.1" aria-modal="true" class="modal hidden fixed inset-0 z-[70] flex items-center justify-center p-2 sm:p-4 bg-black/80" id="modal-2-1" onclick="if(event.target===this)closeModal()" role="dialog"><div class="bg-dark-800 rounded-xl w-full max-w-6xl h-[95vh] flex flex-col border border-dark-600"><div class="p-4 border-b border-dark-600 flex justify-between"><span><strong class="text-blue-400">1.1</strong> · Tool Design</span><button aria-label="Close" class="text-2xl" onclick="closeModal()" type="button">×</button></div><iframe class="flex-1 w-full rounded-b-xl" src="curso/integrator/modulo-2-1.html" title="Module 1.1"></iframe></div></div>
+<div aria-label="Module 1.2" aria-modal="true" class="modal hidden fixed inset-0 z-[70] flex items-center justify-center p-2 sm:p-4 bg-black/80" id="modal-2-2" onclick="if(event.target===this)closeModal()" role="dialog"><div class="bg-dark-800 rounded-xl w-full max-w-6xl h-[95vh] flex flex-col border border-dark-600"><div class="p-4 border-b border-dark-600 flex justify-between"><span><strong class="text-blue-400">1.2</strong> · State, Errors, and Recovery</span><button aria-label="Close" class="text-2xl" onclick="closeModal()" type="button">×</button></div><iframe class="flex-1 w-full rounded-b-xl" src="curso/integrator/modulo-2-2.html" title="Module 1.2"></iframe></div></div>
+<div aria-label="Module 1.3" aria-modal="true" class="modal hidden fixed inset-0 z-[70] flex items-center justify-center p-2 sm:p-4 bg-black/80" id="modal-2-3" onclick="if(event.target===this)closeModal()" role="dialog"><div class="bg-dark-800 rounded-xl w-full max-w-6xl h-[95vh] flex flex-col border border-dark-600"><div class="p-4 border-b border-dark-600 flex justify-between"><span><strong class="text-blue-400">1.3</strong> · Migrating Existing Sites</span><button aria-label="Close" class="text-2xl" onclick="closeModal()" type="button">×</button></div><iframe class="flex-1 w-full rounded-b-xl" src="curso/integrator/modulo-2-3.html" title="Module 1.3"></iframe></div></div>
+<div aria-label="Module 1.4" aria-modal="true" class="modal hidden fixed inset-0 z-[70] flex items-center justify-center p-2 sm:p-4 bg-black/80" id="modal-2-4" onclick="if(event.target===this)closeModal()" role="dialog"><div class="bg-dark-800 rounded-xl w-full max-w-6xl h-[95vh] flex flex-col border border-dark-600"><div class="p-4 border-b border-dark-600 flex justify-between"><span><strong class="text-blue-400">1.4</strong> · Modern Frameworks</span><button aria-label="Close" class="text-2xl" onclick="closeModal()" type="button">×</button></div><iframe class="flex-1 w-full rounded-b-xl" src="curso/integrator/modulo-2-4.html" title="Module 1.4"></iframe></div></div>
+<footer class="border-t border-dark-600 py-8"><div class="max-w-6xl mx-auto px-4 text-sm text-neutral-500">WebMCP Integrator · INEMA · Technical content based on the official draft; check for changes before production.</div></footer>
+<script>
+function toggleTopic(button){const item=button.closest('.topic-item');const panel=item.querySelector('.topic-explanation');const card=button.closest('[data-inema-module]');card.querySelectorAll('.topic-explanation.active').forEach(x=>{if(x!==panel){x.classList.remove('active');const b=x.previousElementSibling;if(b)b.setAttribute('aria-expanded','false')}});panel.classList.toggle('active');button.setAttribute('aria-expanded',panel.classList.contains('active')?'true':'false')}
+function openModal(id){const m=document.getElementById(id);if(m){m.classList.remove('hidden');document.body.style.overflow='hidden';m.querySelector('button')?.focus()}}
+function closeModal(){document.querySelectorAll('.modal').forEach(m=>m.classList.add('hidden'));document.body.style.overflow='auto'}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
+const tt=document.getElementById('theme-toggle'),di=document.getElementById('theme-toggle-dark-icon'),li=document.getElementById('theme-toggle-light-icon');function syncTheme(){if(document.documentElement.classList.contains('dark')){li?.classList.remove('hidden');di?.classList.add('hidden')}else{di?.classList.remove('hidden');li?.classList.add('hidden')}}syncTheme();tt?.addEventListener('click',()=>{const next=document.documentElement.classList.contains('dark')?'claro':'inema-dark';if(window.INEMA&&typeof window.INEMA.setPref==='function')window.INEMA.setPref('theme',next);else{document.documentElement.classList.toggle('dark');localStorage.setItem('theme',next==='claro'?'light':'dark')}syncTheme()});
+</script>
+<script src=".././assets/learn.js"></script>
+<script>if(window.INEMA&&typeof window.INEMA.init==='function')window.INEMA.init();</script>
+</body></html>

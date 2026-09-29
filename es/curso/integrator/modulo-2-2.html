@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 
-<html class="dark" lang="pt-BR">
+<html class="dark" lang="es">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta content="Modele dependências, stale state, idempotência, timeout, cancelamento e recuperação." name="description"/>
+<meta content="Modela dependencias, stale state, idempotencia, timeout, cancelación y recuperación." name="description"/>
 <meta content="webmcp-zero-expert" name="inema-course"/>
 <script>
     (function(){try{var h=document.documentElement,p=JSON.parse(localStorage.getItem('inema.prefs')||'{}'),t=p.theme||(localStorage.getItem('theme')==='light'?'claro':'inema-dark');if(t==='claro'||t==='sepia')h.classList.remove('dark');else h.classList.add('dark');if(['sepia','foco','contraste'].includes(t))h.setAttribute('data-theme',t);else h.removeAttribute('data-theme');if(p.fontScale)h.style.fontSize=p.fontScale+'%';}catch(e){document.documentElement.classList.add('dark')}})();
   </script>
-<title>Módulo 1.2 — Estado, erros e recuperação | WebMCP Integrator</title>
+<title>Módulo 1.2 — Estado, errores y recuperación | WebMCP Integrator</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <script>tailwind.config={darkMode:'class',theme:{extend:{colors:{primary:'#FACC15',dark:{900:'#111827',800:'#1f2937',700:'#374151',600:'#4b5563'}}}}};</script>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="../../favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="../../../favicon.svg" rel="icon" type="image/svg+xml"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
-<link href="../../assets/site.css" rel="stylesheet"/>
-<link href="../../assets/learn.css" rel="stylesheet"/>
+<link href="../../../assets/site.css" rel="stylesheet"/>
+<link href="../../../assets/learn.css" rel="stylesheet"/>
 <script data-inema-manifest="" type="application/json">
 {
   "course": "webmcp-zero-expert",
@@ -56,13 +56,13 @@
 }
 </script>
 <link href="https://inematds.github.io/webmcp-3-integrator/curso/integrator/modulo-2-2.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/webmcp-3-integrator/en/curso/integrator/modulo-2-2.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/webmcp-3-integrator/es/curso/integrator/modulo-2-2.html" hreflang="es" rel="alternate"/></head>
-<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="modulo-2-2.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">PT</a><a href="../../en/curso/integrator/modulo-2-2.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="../../es/curso/integrator/modulo-2-2.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
-<a class="skip" href="#conteudo">Ir para o conteúdo</a>
-<nav aria-label="Navegação principal" class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/integrator/modulo-2-2.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../../../en/curso/integrator/modulo-2-2.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="modulo-2-2.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
+<a class="skip" href="#conteudo">Ir al contenido</a>
+<nav aria-label="Navegación principal" class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 <div class="flex justify-between items-center min-h-16 gap-3">
 <div class="flex items-center gap-3 min-w-0">
-<a aria-label="WebMCP Integrator — início" class="flex items-center gap-2 text-yellow-400 hover:text-yellow-300 flex-shrink-0" href="../../index.html">
+<a aria-label="WebMCP Integrator — inicio" class="flex items-center gap-2 text-yellow-400 hover:text-yellow-300 flex-shrink-0" href="../../index.html">
 <span aria-hidden="true" class="text-2xl">⬡</span><span class="font-bold hidden sm:inline">WebMCP Integrator</span><span class="font-bold sm:hidden">W3</span>
 </a>
 <span class="text-neutral-600 hidden sm:inline">|</span>
@@ -71,28 +71,28 @@
 <div class="flex items-center gap-1">
 <div class="hidden lg:flex items-center gap-1">
 <a aria-current="page" class="phase-chip px-2.5 py-1.5 rounded-lg text-sm font-semibold" href="../../index.html#capitulo-1">Cap. 1<span class="hidden xl:inline"> · Núcleo</span></a>
-<a class="phase-chip px-2.5 py-1.5 rounded-lg text-sm text-neutral-400 hover:text-blue-400" href="../../index.html#capitulo-2">Cap. 2<span class="hidden xl:inline"> · Migração</span></a>
-<a class="phase-chip px-2.5 py-1.5 rounded-lg text-sm text-neutral-400 hover:text-blue-400" href="../../index.html#capitulo-3">Cap. 3<span class="hidden xl:inline"> · Ecossistemas</span></a>
+<a class="phase-chip px-2.5 py-1.5 rounded-lg text-sm text-neutral-400 hover:text-blue-400" href="../../index.html#capitulo-2">Cap. 2<span class="hidden xl:inline"> · Migración</span></a>
+<a class="phase-chip px-2.5 py-1.5 rounded-lg text-sm text-neutral-400 hover:text-blue-400" href="../../index.html#capitulo-3">Cap. 3<span class="hidden xl:inline"> · Ecosistemas</span></a>
 <a class="phase-chip px-2.5 py-1.5 rounded-lg text-sm text-neutral-400 hover:text-blue-400" href="../../index.html#capitulo-4">Cap. 4<span class="hidden xl:inline"> · Entrega</span></a>
-<a class="phase-chip px-2.5 py-1.5 rounded-lg text-sm text-sky-400 hover:text-sky-300" href="../../labs/validador-tools.html">Laboratórios</a>
+<a class="phase-chip px-2.5 py-1.5 rounded-lg text-sm text-sky-400 hover:text-sky-300" href="../../labs/validador-tools.html">Laboratorios</a>
 </div>
-<button aria-label="Abrir minha jornada" class="p-2 rounded-lg text-neutral-300 hover:bg-dark-700" data-inema-journey-open="" type="button"><span aria-hidden="true">◷</span><span class="inema-journey-badge" data-count="0" data-inema-journey-badge=""></span></button>
+<button aria-label="Abrir mi recorrido" class="p-2 rounded-lg text-neutral-300 hover:bg-dark-700" data-inema-journey-open="" type="button"><span aria-hidden="true">◷</span><span class="inema-journey-badge" data-count="0" data-inema-journey-badge=""></span></button>
 <div class="relative">
-<button aria-expanded="false" aria-label="Ajustar aparência" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600" data-inema-appearance-toggle="[data-inema-appearance]" type="button">◑</button>
+<button aria-expanded="false" aria-label="Ajustar apariencia" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600" data-inema-appearance-toggle="[data-inema-appearance]" type="button">◑</button>
 <div class="inema-appearance-pop right-0 mt-3" data-inema-appearance="">
 <p class="text-sm font-semibold mb-2">Tema</p>
-<div class="inema-segment"><button data-inema-set-theme="inema-dark">Escuro</button><button data-inema-set-theme="claro">Claro</button><button data-inema-set-theme="sepia">Sépia</button><button data-inema-set-theme="foco">Foco</button><button data-inema-set-theme="contraste">Contraste</button></div>
-<p class="text-sm font-semibold mt-4 mb-2">Tamanho</p>
+<div class="inema-segment"><button data-inema-set-theme="inema-dark">Oscuro</button><button data-inema-set-theme="claro">Claro</button><button data-inema-set-theme="sepia">Sepia</button><button data-inema-set-theme="foco">Enfoque</button><button data-inema-set-theme="contraste">Contraste</button></div>
+<p class="text-sm font-semibold mt-4 mb-2">Tamaño</p>
 <div class="inema-segment"><button data-inema-set-fontscale="100">A</button><button data-inema-set-fontscale="112">A+</button><button data-inema-set-fontscale="125">A++</button></div>
 </div>
 </div>
-<button aria-label="Alternar tema claro e escuro" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600" id="theme-toggle">
+<button aria-label="Alternar entre tema claro y oscuro" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600" id="theme-toggle">
 <svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
 <svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-light-icon" viewbox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
 </button>
 </div>
 </div>
-<div aria-label="Capítulos do WebMCP Integrator" class="lg:hidden flex items-center gap-1 overflow-x-auto pb-2">
+<div aria-label="Capítulos del WebMCP Integrator" class="lg:hidden flex items-center gap-1 overflow-x-auto pb-2">
 <a aria-current="page" class="phase-chip flex-shrink-0 px-3 py-2 rounded-lg text-xs font-semibold" href="../../index.html#capitulo-1">Cap. 1</a>
 <a class="phase-chip flex-shrink-0 px-3 py-2 rounded-lg text-xs text-neutral-400 hover:text-blue-400" href="../../index.html#capitulo-2">Cap. 2</a>
 <a class="phase-chip flex-shrink-0 px-3 py-2 rounded-lg text-xs text-neutral-400 hover:text-blue-400" href="../../index.html#capitulo-3">Cap. 3</a>
@@ -101,36 +101,36 @@
 </div>
 </div>
 </nav>
-<nav aria-label="Breadcrumb" class="max-w-6xl mx-auto px-4 py-4 text-sm text-neutral-400"><a class="hover:text-blue-400" href="../../index.html">Início</a><span class="mx-2">/</span><a class="hover:text-blue-400" href="../../index.html#mapa">Integrator</a><span class="mx-2">/</span><span class="text-blue-400">Módulo 1.2</span></nav>
+<nav aria-label="Breadcrumb" class="max-w-6xl mx-auto px-4 py-4 text-sm text-neutral-400"><a class="hover:text-blue-400" href="../../index.html">Inicio</a><span class="mx-2">/</span><a class="hover:text-blue-400" href="../../index.html#mapa">Integrator</a><span class="mx-2">/</span><span class="text-blue-400">Módulo 1.2</span></nav>
 <header class="bg-gradient-to-br from-blue-900/30 via-dark-800 to-dark-800 py-12 border-y border-dark-600" data-inema-module="2-2" data-inema-track="2" id="modulo-2-2">
-<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"><span class="inline-block px-3 py-1 bg-blue-500/20 text-blue-400 text-xs font-semibold rounded-full mb-4">MÓDULO 1.2</span><h1 class="text-3xl sm:text-4xl font-bold mb-4">🔄 Estado, erros e recuperação</h1><p class="text-lg text-neutral-400 max-w-3xl">Modele dependências, stale state, idempotência, timeout, cancelamento e recuperação.</p><div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 max-w-3xl"><div class="bg-dark-800/50 p-3 rounded-lg border border-dark-600"><strong class="text-xl text-blue-400">6</strong><p class="text-xs text-neutral-400">Tópicos</p></div><div class="bg-dark-800/50 p-3 rounded-lg border border-dark-600"><strong class="text-xl text-blue-400">3h</strong><p class="text-xs text-neutral-400">Carga</p></div><div class="bg-dark-800/50 p-3 rounded-lg border border-dark-600"><strong class="text-xl text-blue-400">Integrator</strong><p class="text-xs text-neutral-400">Nível</p></div><div class="bg-dark-800/50 p-3 rounded-lg border border-dark-600"><strong class="text-xl text-blue-400">Resiliência</strong><p class="text-xs text-neutral-400">Tipo</p></div></div><div class="inema-meter mt-6 max-w-2xl" data-inema-meter="modulo:2-2"><div class="flex justify-between gap-3 text-sm text-neutral-400 mb-2"><span data-inema-meter-frac="">0 de 6</span><span data-inema-meter-pct="">0%</span></div><div class="inema-bar"><div class="inema-bar__fill" data-inema-meter-fill=""></div></div></div></div>
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"><span class="inline-block px-3 py-1 bg-blue-500/20 text-blue-400 text-xs font-semibold rounded-full mb-4">MÓDULO 1.2</span><h1 class="text-3xl sm:text-4xl font-bold mb-4">🔄 Estado, errores y recuperación</h1><p class="text-lg text-neutral-400 max-w-3xl">Modela dependencias, stale state, idempotencia, timeout, cancelación y recuperación.</p><div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 max-w-3xl"><div class="bg-dark-800/50 p-3 rounded-lg border border-dark-600"><strong class="text-xl text-blue-400">6</strong><p class="text-xs text-neutral-400">Temas</p></div><div class="bg-dark-800/50 p-3 rounded-lg border border-dark-600"><strong class="text-xl text-blue-400">3h</strong><p class="text-xs text-neutral-400">Carga</p></div><div class="bg-dark-800/50 p-3 rounded-lg border border-dark-600"><strong class="text-xl text-blue-400">Integrator</strong><p class="text-xs text-neutral-400">Nivel</p></div><div class="bg-dark-800/50 p-3 rounded-lg border border-dark-600"><strong class="text-xl text-blue-400">Resiliencia</strong><p class="text-xs text-neutral-400">Tipo</p></div></div><div class="inema-meter mt-6 max-w-2xl" data-inema-meter="modulo:2-2"><div class="flex justify-between gap-3 text-sm text-neutral-400 mb-2"><span data-inema-meter-frac="">0 de 6</span><span data-inema-meter-pct="">0%</span></div><div class="inema-bar"><div class="inema-bar__fill" data-inema-meter-fill=""></div></div></div></div>
 </header>
 <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12" id="conteudo">
 <div class="grid lg:grid-cols-[15rem_minmax(0,1fr)] gap-10">
-<aside><nav aria-label="Índice do módulo" class="hidden lg:block sticky top-24" data-inema-toc=""><p class="text-sm text-neutral-400 mb-3" data-inema-section-counter="">Seção 1 de 6</p><ol class="space-y-1"><li><a class="toc-link block border-l-2 border-dark-600 px-3 py-2 text-sm text-neutral-400 hover:text-blue-400" href="#topico-1">1. Modele a jornada como estados</a></li>
-<li><a class="toc-link block border-l-2 border-dark-600 px-3 py-2 text-sm text-neutral-400 hover:text-blue-400" href="#topico-2">2. Separe erros recuperáveis e definitivos</a></li>
-<li><a class="toc-link block border-l-2 border-dark-600 px-3 py-2 text-sm text-neutral-400 hover:text-blue-400" href="#topico-3">3. Proteja contra stale state</a></li>
-<li><a class="toc-link block border-l-2 border-dark-600 px-3 py-2 text-sm text-neutral-400 hover:text-blue-400" href="#topico-4">4. Faça mutações idempotentes</a></li>
-<li><a class="toc-link block border-l-2 border-dark-600 px-3 py-2 text-sm text-neutral-400 hover:text-blue-400" href="#topico-5">5. Cancele e limite o tempo</a></li>
-<li><a class="toc-link block border-l-2 border-dark-600 px-3 py-2 text-sm text-neutral-400 hover:text-blue-400" href="#topico-6">6. Teste a recuperação ponta a ponta</a></li></ol></nav></aside>
+<aside><nav aria-label="Índice del módulo" class="hidden lg:block sticky top-24" data-inema-toc=""><p class="text-sm text-neutral-400 mb-3" data-inema-section-counter="">Sección 1 de 6</p><ol class="space-y-1"><li><a class="toc-link block border-l-2 border-dark-600 px-3 py-2 text-sm text-neutral-400 hover:text-blue-400" href="#topico-1">1. Modela el recorrido como estados</a></li>
+<li><a class="toc-link block border-l-2 border-dark-600 px-3 py-2 text-sm text-neutral-400 hover:text-blue-400" href="#topico-2">2. Separa los errores recuperables de los definitivos</a></li>
+<li><a class="toc-link block border-l-2 border-dark-600 px-3 py-2 text-sm text-neutral-400 hover:text-blue-400" href="#topico-3">3. Protege contra el estado obsoleto</a></li>
+<li><a class="toc-link block border-l-2 border-dark-600 px-3 py-2 text-sm text-neutral-400 hover:text-blue-400" href="#topico-4">4. Haz mutaciones idempotentes</a></li>
+<li><a class="toc-link block border-l-2 border-dark-600 px-3 py-2 text-sm text-neutral-400 hover:text-blue-400" href="#topico-5">5. Cancela y limita el tiempo</a></li>
+<li><a class="toc-link block border-l-2 border-dark-600 px-3 py-2 text-sm text-neutral-400 hover:text-blue-400" href="#topico-6">6. Prueba la recuperación de extremo a extremo</a></li></ol></nav></aside>
 <article class="min-w-0">
 <section class="mb-16" data-inema-topic="modulo-2-2#topico-1" id="topico-1">
 <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
 <div class="flex items-center gap-4 min-w-0">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl flex-shrink-0">1</span>
-<h2 class="text-2xl font-bold">Modele a jornada como estados</h2>
+<h2 class="text-2xl font-bold">Modela el recorrido como estados</h2>
 </div>
 <button aria-pressed="false" class="inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 self-start" data-inema-doubt-toggle="" type="button">
 <span aria-hidden="true">?</span>
-<span>Tenho dúvida</span>
+<span>Tengo una duda</span>
 </button>
 </div>
 <div class="inema-prose">
-<p class="text-neutral-300 mb-5 leading-relaxed" data-inema-block="m2-2-t1-p1"><strong class="text-blue-400">O que é:</strong> Cada etapa declara o que já aconteceu, quais ações estão disponíveis e qual transição é válida.</p>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m2-2-t1-p2"><strong class="text-blue-400">Por que aprender:</strong> Sem um modelo de estado, o agente pode confirmar antes de iniciar ou repetir um efeito já concluído.</p>
+<p class="text-neutral-300 mb-5 leading-relaxed" data-inema-block="m2-2-t1-p1"><strong class="text-blue-400">Qué es:</strong> Cada etapa declara qué ya ocurrió, qué acciones están disponibles y qué transición es válida.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m2-2-t1-p2"><strong class="text-blue-400">Por qué aprender:</strong> Sin un modelo de estado, el agente puede confirmar antes de iniciar o repetir un efecto ya completado.</p>
 </div>
 <div class="rounded-2xl border border-blue-500/30 bg-dark-900/40 p-4 mb-7 overflow-hidden">
-<svg aria-label="Fluxo de Estado atual para Tool permitida para Próxima ação" class="w-full h-auto" role="img" viewbox="0 0 1000 300">
+<svg aria-label="Flujo Estado actual para Tool permitida para Próxima acción" class="w-full h-auto" role="img" viewbox="0 0 1000 300">
 <defs>
 <filter height="180%" id="m22-glow" width="180%" x="-40%" y="-40%">
 <fegaussianblur result="b" stddeviation="1.8"></fegaussianblur>
@@ -150,45 +150,45 @@
 </g>
 <g>
 <rect fill="#0e1622" height="90" rx="14" stroke="#60a5fa" stroke-width="2" width="230" x="40" y="105"></rect>
-<text fill="#60a5fa" font-family="Inter,sans-serif" font-size="18" font-weight="600" text-anchor="middle" x="155" y="143">Estado atual</text>
-<text fill="#d1d5db" font-family="Inter,sans-serif" font-size="13" text-anchor="middle" x="155" y="170">estado de partida</text>
+<text fill="#60a5fa" font-family="Inter,sans-serif" font-size="18" font-weight="600" text-anchor="middle" x="155" y="143">Estado actual</text>
+<text fill="#d1d5db" font-family="Inter,sans-serif" font-size="13" text-anchor="middle" x="155" y="170">estado inicial</text>
 </g>
 <g filter="url(#m22-glow)">
 <rect fill="#0e1622" height="110" rx="14" stroke="#60a5fa" stroke-width="2" width="240" x="380" y="95"></rect>
 </g>
 <text fill="#60a5fa" font-family="Inter,sans-serif" font-size="18" font-weight="600" text-anchor="middle" x="500" y="143">Tool permitida</text>
-<text fill="#d1d5db" font-family="Inter,sans-serif" font-size="13" text-anchor="middle" x="500" y="170">decisão observável</text>
+<text fill="#d1d5db" font-family="Inter,sans-serif" font-size="13" text-anchor="middle" x="500" y="170">decisión observable</text>
 <g>
 <rect fill="#0e1b26" height="90" rx="14" stroke="#38bdf8" stroke-width="2" width="230" x="730" y="105"></rect>
-<text fill="#9ad6ff" font-family="Inter,sans-serif" font-size="18" font-weight="600" text-anchor="middle" x="845" y="143">Próxima ação</text>
-<text fill="#bfe6ff" font-family="Inter,sans-serif" font-size="13" text-anchor="middle" x="845" y="170">resultado verificável</text>
+<text fill="#9ad6ff" font-family="Inter,sans-serif" font-size="18" font-weight="600" text-anchor="middle" x="845" y="143">Próxima acción</text>
+<text fill="#bfe6ff" font-family="Inter,sans-serif" font-size="13" text-anchor="middle" x="845" y="170">resultado verificable</text>
 </g>
 </svg>
 </div>
 <div class="grid md:grid-cols-2 gap-6 mb-6">
 <div class="bg-blue-900/20 border border-blue-500/30 rounded-xl p-6">
 <h3 class="font-semibold text-blue-400">Antes de modelar</h3>
-<p class="text-neutral-300 mt-3">Escreva o pedido da pessoa, o estado atual e a evidência que provará conclusão.</p>
+<p class="text-neutral-300 mt-3">Escribe la solicitud de la persona, el estado actual y la evidencia que probará la finalización.</p>
 </div>
 <div class="bg-red-900/20 border border-red-500/30 rounded-xl p-6">
-<h3 class="font-semibold text-red-400">Erro de partida</h3>
-<p class="text-neutral-300 mt-3">Começar pelo nome de uma função ou por um botão produz uma tool sem objetivo humano claro.</p>
+<h3 class="font-semibold text-red-400">Error de inicio</h3>
+<p class="text-neutral-300 mt-3">Empezar por el nombre de una función o por un botón produce una tool sin un objetivo humano claro.</p>
 </div>
 </div>
 <div class="bg-primary/10 border border-primary/30 rounded-xl p-6 mb-6">
-<h3 class="font-semibold text-primary">Preveja antes de abrir o código</h3>
-<p class="text-neutral-300 mt-3">Qual informação muda a decisão? Qual efeito precisa aparecer na interface? Responda antes de implementar.</p>
+<h3 class="font-semibold text-primary">Anticípate antes de abrir el código</h3>
+<p class="text-neutral-300 mt-3">¿Qué información cambia la decisión? ¿Qué efecto debe aparecer en la interfaz? Responde antes de implementar.</p>
 </div>
 <pre class="code-shell mb-6"><code>rascunho -&gt; iniciado -&gt; aguardando_confirmacao -&gt; confirmado</code></pre>
 <details class="bg-dark-800 border border-dark-600 rounded-xl p-6 mb-6">
-<summary class="font-semibold text-sky-400 cursor-pointer">Indo mais fundo: evidência que vale guardar</summary>
+<summary class="font-semibold text-sky-400 cursor-pointer">Profundiza: evidencia que vale la pena guardar</summary>
 <div class="mt-4 space-y-3 text-sm text-neutral-300">
-<p data-inema-block="m2-2-t1-p3">Registre a entrada, o estado anterior, a decisão tomada, o resultado e a alteração visível da página.</p>
-<p data-inema-block="m2-2-t1-p4">Inclua também uma falha provocada e o comportamento observado sem suporte WebMCP.</p>
+<p data-inema-block="m2-2-t1-p3">Registra la entrada, el estado anterior, la decisión tomada, el resultado y el cambio visible en la página.</p>
+<p data-inema-block="m2-2-t1-p4">Incluye también un fallo provocado y el comportamiento observado sin soporte de WebMCP.</p>
 </div>
 </details>
 <div>
-<h3 class="font-semibold text-blue-400">Conceitos-chave</h3>
+<h3 class="font-semibold text-blue-400">Conceptos clave</h3>
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 mt-5">
 <div class="bg-dark-700/60 border border-dark-600 rounded-lg p-4">
 <strong class="text-blue-400 text-xs">01</strong>
@@ -196,22 +196,22 @@
 </div>
 <div class="bg-dark-700/60 border border-dark-600 rounded-lg p-4">
 <strong class="text-blue-400 text-xs">02</strong>
-<p class="text-sm text-neutral-300 mt-2">transição válida</p>
+<p class="text-sm text-neutral-300 mt-2">transición válida</p>
 </div>
 <div class="bg-dark-700/60 border border-dark-600 rounded-lg p-4">
 <strong class="text-blue-400 text-xs">03</strong>
-<p class="text-sm text-neutral-300 mt-2">pré-condição</p>
+<p class="text-sm text-neutral-300 mt-2">precondición</p>
 </div>
 <div class="bg-dark-700/60 border border-dark-600 rounded-lg p-4">
 <strong class="text-blue-400 text-xs">04</strong>
-<p class="text-sm text-neutral-300 mt-2">efeito</p>
+<p class="text-sm text-neutral-300 mt-2">efecto</p>
 </div>
 </div>
 </div>
 <div class="flex justify-start mt-7">
 <button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30" data-inema-read-toggle="" type="button">
 <span aria-hidden="true" class="inema-read-icon">○</span>
-<span data-inema-read-label="">Marcar como lido</span>
+<span data-inema-read-label="">Marcar como leído</span>
 </button>
 </div>
 </section>
@@ -219,38 +219,38 @@
 <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
 <div class="flex items-center gap-4 min-w-0">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl flex-shrink-0">2</span>
-<h2 class="text-2xl font-bold">Separe erros recuperáveis e definitivos</h2>
+<h2 class="text-2xl font-bold">Separa los errores recuperables de los definitivos</h2>
 </div>
 <button aria-pressed="false" class="inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 self-start" data-inema-doubt-toggle="" type="button">
 <span aria-hidden="true">?</span>
-<span>Tenho dúvida</span>
+<span>Tengo una duda</span>
 </button>
 </div>
 <div class="inema-prose">
-<p class="text-neutral-300 mb-5 leading-relaxed" data-inema-block="m2-2-t2-p1"><strong class="text-blue-400">O que é:</strong> Erros recuperáveis indicam uma próxima ação; erros definitivos encerram a tentativa com motivo verificável.</p>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m2-2-t2-p2"><strong class="text-blue-400">Por que aprender:</strong> A classificação evita loops cegos e permite que o agente explique alternativas reais ao usuário.</p>
+<p class="text-neutral-300 mb-5 leading-relaxed" data-inema-block="m2-2-t2-p1"><strong class="text-blue-400">Qué es:</strong> Los errores recuperables indican una próxima acción; los errores definitivos cierran el intento con un motivo verificable.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m2-2-t2-p2"><strong class="text-blue-400">Por qué aprender:</strong> La clasificación evita ciclos a ciegas y permite que el agente explique alternativas reales al usuario.</p>
 </div>
 <div class="overflow-x-auto border border-dark-600 rounded-xl mb-6">
 <table class="w-full text-left text-sm min-w-[700px]">
 <thead class="bg-dark-700">
-<tr><th class="p-4">Pergunta</th><th class="p-4">Contrato forte</th><th class="p-4">Contrato fraco</th></tr>
+<tr><th class="p-4">Pregunta</th><th class="p-4">Contrato sólido</th><th class="p-4">Contrato débil</th></tr>
 </thead>
 <tbody class="divide-y divide-dark-600">
-<tr><th class="p-4">Quando usar?</th><td class="p-4">A descrição nomeia intenção e contexto.</td><td class="p-4">“Faz coisas” ou “gerencia”.</td></tr>
-<tr><th class="p-4">O que recebe?</th><td class="p-4">Somente dados necessários.</td><td class="p-4">Objeto genérico e ilimitado.</td></tr>
-<tr><th class="p-4">O que devolve?</th><td class="p-4">Estado e próxima ação verificáveis.</td><td class="p-4">Texto sem protocolo.</td></tr>
-<tr><th class="p-4">Como falha?</th><td class="p-4">Código, motivo e recuperação.</td><td class="p-4">Exceção opaca.</td></tr>
+<tr><th class="p-4">¿Cuándo usarlo?</th><td class="p-4">La descripción expresa la intención y el contexto.</td><td class="p-4">“Hace cosas” o “gestiona”.</td></tr>
+<tr><th class="p-4">¿Qué recibes?</th><td class="p-4">Solo los datos necesarios.</td><td class="p-4">Objeto genérico e ilimitado.</td></tr>
+<tr><th class="p-4">¿Qué devuelve?</th><td class="p-4">Estado y próxima acción verificables.</td><td class="p-4">Texto sin protocolo.</td></tr>
+<tr><th class="p-4">¿Cómo falla?</th><td class="p-4">Código, motivo y recuperación.</td><td class="p-4">Excepción opaca.</td></tr>
 </tbody>
 </table>
 </div>
 <div class="grid md:grid-cols-2 gap-6 mb-6">
 <div class="bg-blue-900/20 border border-blue-500/30 rounded-xl p-6">
-<h3 class="font-semibold text-blue-400">Faça</h3>
-<ul class="mt-4 space-y-2 text-neutral-300"><li>✓ Use verbos específicos.</li><li>✓ Delimite entradas.</li><li>✓ Declare a evidência.</li></ul>
+<h3 class="font-semibold text-blue-400">Haz</h3>
+<ul class="mt-4 space-y-2 text-neutral-300"><li>✓ Usa verbos específicos.</li><li>✓ Delimita las entradas.</li><li>✓ Declara la evidencia.</li></ul>
 </div>
 <div class="bg-red-900/20 border border-red-500/30 rounded-xl p-6">
-<h3 class="font-semibold text-red-400">Evite</h3>
-<ul class="mt-4 space-y-2 text-neutral-300"><li>✗ Misturar intenções.</li><li>✗ Aceitar qualquer objeto.</li><li>✗ Esconder efeitos.</li></ul>
+<h3 class="font-semibold text-red-400">Evita</h3>
+<ul class="mt-4 space-y-2 text-neutral-300"><li>✗ Mezclar intenciones.</li><li>✗ Aceptar cualquier objeto.</li><li>✗ Ocultar efectos.</li></ul>
 </div>
 </div>
 <pre class="code-shell mb-6"><code>return {
@@ -259,37 +259,37 @@
   recovery: { tool: "iniciar_inscricao" }
 };</code></pre>
 <details class="bg-dark-800 border border-dark-600 rounded-xl p-6 mb-6">
-<summary class="font-semibold text-sky-400 cursor-pointer">Indo mais fundo: evidência que vale guardar</summary>
+<summary class="font-semibold text-sky-400 cursor-pointer">Profundiza: evidencia que vale la pena guardar</summary>
 <div class="mt-4 space-y-3 text-sm text-neutral-300">
-<p data-inema-block="m2-2-t2-p3">Registre a entrada, o estado anterior, a decisão tomada, o resultado e a alteração visível da página.</p>
-<p data-inema-block="m2-2-t2-p4">Inclua também uma falha provocada e o comportamento observado sem suporte WebMCP.</p>
+<p data-inema-block="m2-2-t2-p3">Registra la entrada, el estado anterior, la decisión tomada, el resultado y el cambio visible en la página.</p>
+<p data-inema-block="m2-2-t2-p4">Incluye también un fallo provocado y el comportamiento observado sin soporte de WebMCP.</p>
 </div>
 </details>
 <div>
-<h3 class="font-semibold text-blue-400">Conceitos-chave</h3>
+<h3 class="font-semibold text-blue-400">Conceptos clave</h3>
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 mt-5">
 <div class="bg-dark-700/60 border border-dark-600 rounded-lg p-4">
 <strong class="text-blue-400 text-xs">01</strong>
-<p class="text-sm text-neutral-300 mt-2">código estável</p>
+<p class="text-sm text-neutral-300 mt-2">código estable</p>
 </div>
 <div class="bg-dark-700/60 border border-dark-600 rounded-lg p-4">
 <strong class="text-blue-400 text-xs">02</strong>
-<p class="text-sm text-neutral-300 mt-2">mensagem acionável</p>
+<p class="text-sm text-neutral-300 mt-2">mensaje accionable</p>
 </div>
 <div class="bg-dark-700/60 border border-dark-600 rounded-lg p-4">
 <strong class="text-blue-400 text-xs">03</strong>
-<p class="text-sm text-neutral-300 mt-2">próxima ação</p>
+<p class="text-sm text-neutral-300 mt-2">próxima acción</p>
 </div>
 <div class="bg-dark-700/60 border border-dark-600 rounded-lg p-4">
 <strong class="text-blue-400 text-xs">04</strong>
-<p class="text-sm text-neutral-300 mt-2">fim honesto</p>
+<p class="text-sm text-neutral-300 mt-2">final honesto</p>
 </div>
 </div>
 </div>
 <div class="flex justify-start mt-7">
 <button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30" data-inema-read-toggle="" type="button">
 <span aria-hidden="true" class="inema-read-icon">○</span>
-<span data-inema-read-label="">Marcar como lido</span>
+<span data-inema-read-label="">Marcar como leído</span>
 </button>
 </div>
 </section>
@@ -297,74 +297,74 @@
 <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
 <div class="flex items-center gap-4 min-w-0">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl flex-shrink-0">3</span>
-<h2 class="text-2xl font-bold">Proteja contra stale state</h2>
+<h2 class="text-2xl font-bold">Protégete contra el estado obsoleto</h2>
 </div>
 <button aria-pressed="false" class="inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 self-start" data-inema-doubt-toggle="" type="button">
 <span aria-hidden="true">?</span>
-<span>Tenho dúvida</span>
+<span>Tengo una duda</span>
 </button>
 </div>
 <div class="inema-prose">
-<p class="text-neutral-300 mb-5 leading-relaxed" data-inema-block="m2-2-t3-p1"><strong class="text-blue-400">O que é:</strong> O estado usado para decidir pode mudar antes da execução, especialmente em vagas, preços e permissões.</p>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m2-2-t3-p2"><strong class="text-blue-400">Por que aprender:</strong> Revalidar no momento do efeito impede que uma tool use uma fotografia antiga como autorização atual.</p>
+<p class="text-neutral-300 mb-5 leading-relaxed" data-inema-block="m2-2-t3-p1"><strong class="text-blue-400">Qué es:</strong> El estado usado para decidir puede cambiar antes de la ejecución, especialmente en vacantes, precios y permisos.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m2-2-t3-p2"><strong class="text-blue-400">Por qué aprender:</strong> Volver a validar en el momento del efecto impide que una tool use una fotografía antigua como autorización vigente.</p>
 </div>
 <div class="space-y-4 mb-6">
 <div class="flex items-start gap-4">
 <div class="w-10 h-10 rounded-full bg-blue-500/20 text-blue-400 flex items-center justify-center font-bold flex-shrink-0">1</div>
-<div class="flex-1 bg-dark-800 border border-dark-600 rounded-xl p-5"><h3 class="font-semibold">Observe</h3><p class="text-sm text-neutral-400 mt-2">Capture estado, entrada e contexto antes da ação.</p></div>
+<div class="flex-1 bg-dark-800 border border-dark-600 rounded-xl p-5"><h3 class="font-semibold">Observa</h3><p class="text-sm text-neutral-400 mt-2">Captura el estado, la entrada y el contexto antes de la acción.</p></div>
 </div>
 <div class="flex items-start gap-4">
 <div class="w-10 h-10 rounded-full bg-sky-500/20 text-sky-400 flex items-center justify-center font-bold flex-shrink-0">2</div>
-<div class="flex-1 bg-dark-800 border border-dark-600 rounded-xl p-5"><h3 class="font-semibold">Decida</h3><p class="text-sm text-neutral-400 mt-2">Valide pré-condições e escolha a transição permitida.</p></div>
+<div class="flex-1 bg-dark-800 border border-dark-600 rounded-xl p-5"><h3 class="font-semibold">Decide</h3><p class="text-sm text-neutral-400 mt-2">Valida las precondiciones y elige la transición permitida.</p></div>
 </div>
 <div class="flex items-start gap-4">
 <div class="w-10 h-10 rounded-full bg-blue-500/20 text-blue-400 flex items-center justify-center font-bold flex-shrink-0">3</div>
-<div class="flex-1 bg-dark-800 border border-dark-600 rounded-xl p-5"><h3 class="font-semibold">Execute</h3><p class="text-sm text-neutral-400 mt-2">Aplique a regra compartilhada e respeite cancelamento.</p></div>
+<div class="flex-1 bg-dark-800 border border-dark-600 rounded-xl p-5"><h3 class="font-semibold">Ejecuta</h3><p class="text-sm text-neutral-400 mt-2">Aplica la regla compartida y respeta la cancelación.</p></div>
 </div>
 <div class="flex items-start gap-4">
 <div class="w-10 h-10 rounded-full bg-sky-500/20 text-sky-400 flex items-center justify-center font-bold flex-shrink-0">4</div>
-<div class="flex-1 bg-dark-800 border border-dark-600 rounded-xl p-5"><h3 class="font-semibold">Prove</h3><p class="text-sm text-neutral-400 mt-2">Atualize a interface e devolva resultado estruturado.</p></div>
+<div class="flex-1 bg-dark-800 border border-dark-600 rounded-xl p-5"><h3 class="font-semibold">Demuestra</h3><p class="text-sm text-neutral-400 mt-2">Actualiza la interfaz y devuelve un resultado estructurado.</p></div>
 </div>
 </div>
 <div class="bg-primary/10 border border-primary/30 rounded-xl p-6 mb-6">
-<h3 class="font-semibold text-primary">Ponto de controle</h3>
-<p class="text-neutral-300 mt-3">Se a etapa 2 reprovar, a tool não tenta “dar um jeito”: ela devolve uma recuperação explícita.</p>
+<h3 class="font-semibold text-primary">Punto de control</h3>
+<p class="text-neutral-300 mt-3">Si el paso 2 no se aprueba, la tool no intenta «arreglárselas»: devuelve una recuperación explícita.</p>
 </div>
 <pre class="code-shell mb-6"><code>if (input.version !== inscricao.version) {
   throw new ConflictError("Estado mudou; consulte novamente.");
 }</code></pre>
 <details class="bg-dark-800 border border-dark-600 rounded-xl p-6 mb-6">
-<summary class="font-semibold text-sky-400 cursor-pointer">Indo mais fundo: evidência que vale guardar</summary>
+<summary class="font-semibold text-sky-400 cursor-pointer">Profundiza: evidencia que vale la pena guardar</summary>
 <div class="mt-4 space-y-3 text-sm text-neutral-300">
-<p data-inema-block="m2-2-t3-p3">Registre a entrada, o estado anterior, a decisão tomada, o resultado e a alteração visível da página.</p>
-<p data-inema-block="m2-2-t3-p4">Inclua também uma falha provocada e o comportamento observado sem suporte WebMCP.</p>
+<p data-inema-block="m2-2-t3-p3">Registra la entrada, el estado anterior, la decisión tomada, el resultado y el cambio visible en la página.</p>
+<p data-inema-block="m2-2-t3-p4">Incluye también un fallo provocado y el comportamiento observado sin soporte de WebMCP.</p>
 </div>
 </details>
 <div>
-<h3 class="font-semibold text-blue-400">Conceitos-chave</h3>
+<h3 class="font-semibold text-blue-400">Conceptos clave</h3>
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 mt-5">
 <div class="bg-dark-700/60 border border-dark-600 rounded-lg p-4">
 <strong class="text-blue-400 text-xs">01</strong>
-<p class="text-sm text-neutral-300 mt-2">revalidação</p>
+<p class="text-sm text-neutral-300 mt-2">revalidación</p>
 </div>
 <div class="bg-dark-700/60 border border-dark-600 rounded-lg p-4">
 <strong class="text-blue-400 text-xs">02</strong>
-<p class="text-sm text-neutral-300 mt-2">versão de estado</p>
+<p class="text-sm text-neutral-300 mt-2">versión de estado</p>
 </div>
 <div class="bg-dark-700/60 border border-dark-600 rounded-lg p-4">
 <strong class="text-blue-400 text-xs">03</strong>
-<p class="text-sm text-neutral-300 mt-2">conflito</p>
+<p class="text-sm text-neutral-300 mt-2">conflicto</p>
 </div>
 <div class="bg-dark-700/60 border border-dark-600 rounded-lg p-4">
 <strong class="text-blue-400 text-xs">04</strong>
-<p class="text-sm text-neutral-300 mt-2">nova leitura</p>
+<p class="text-sm text-neutral-300 mt-2">nueva lectura</p>
 </div>
 </div>
 </div>
 <div class="flex justify-start mt-7">
 <button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30" data-inema-read-toggle="" type="button">
 <span aria-hidden="true" class="inema-read-icon">○</span>
-<span data-inema-read-label="">Marcar como lido</span>
+<span data-inema-read-label="">Marcar como leído</span>
 </button>
 </div>
 </section>
@@ -372,41 +372,41 @@
 <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
 <div class="flex items-center gap-4 min-w-0">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl flex-shrink-0">4</span>
-<h2 class="text-2xl font-bold">Faça mutações idempotentes</h2>
+<h2 class="text-2xl font-bold">Haz mutaciones idempotentes</h2>
 </div>
 <button aria-pressed="false" class="inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 self-start" data-inema-doubt-toggle="" type="button">
 <span aria-hidden="true">?</span>
-<span>Tenho dúvida</span>
+<span>Tengo una duda</span>
 </button>
 </div>
 <div class="inema-prose">
-<p class="text-neutral-300 mb-5 leading-relaxed" data-inema-block="m2-2-t4-p1"><strong class="text-blue-400">O que é:</strong> Uma chave de idempotência permite repetir uma solicitação sem duplicar inscrição, cobrança ou envio.</p>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m2-2-t4-p2"><strong class="text-blue-400">Por que aprender:</strong> Agentes, redes e usuários podem repetir chamadas; a operação precisa distinguir retry de novo efeito.</p>
+<p class="text-neutral-300 mb-5 leading-relaxed" data-inema-block="m2-2-t4-p1"><strong class="text-blue-400">Qué es:</strong> Una clave de idempotencia permite repetir una solicitud sin duplicar una suscripción, un cobro o un envío.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m2-2-t4-p2"><strong class="text-blue-400">Por qué aprender:</strong> Los agentes, las redes y los usuarios pueden repetir llamadas; la operación debe distinguir entre un reintento y un nuevo efecto.</p>
 </div>
 <div class="grid lg:grid-cols-[1.1fr_.9fr] gap-6 mb-6">
 <div class="min-w-0">
-<p class="text-xs text-blue-400 font-semibold mb-3">CÓDIGO DE REFERÊNCIA</p>
+<p class="text-xs text-blue-400 font-semibold mb-3">CÓDIGO DE REFERENCIA</p>
 <pre class="code-shell"><code>headers: { "Idempotency-Key": executionId }</code></pre>
 </div>
 <div class="space-y-3 min-w-0">
-<div class="bg-dark-800 border border-dark-600 rounded-xl p-5"><strong class="text-blue-400">Entrada</strong><p class="text-sm text-neutral-400 mt-2">É pequena, descrita e validável.</p></div>
-<div class="bg-dark-800 border border-dark-600 rounded-xl p-5"><strong class="text-sky-400">Execução</strong><p class="text-sm text-neutral-400 mt-2">Reutiliza a regra real da aplicação.</p></div>
-<div class="bg-dark-800 border border-dark-600 rounded-xl p-5"><strong class="text-blue-400">Saída</strong><p class="text-sm text-neutral-400 mt-2">Permite verificar efeito e continuar.</p></div>
+<div class="bg-dark-800 border border-dark-600 rounded-xl p-5"><strong class="text-blue-400">Entrada</strong><p class="text-sm text-neutral-400 mt-2">Es pequeña, está descrita y se puede validar.</p></div>
+<div class="bg-dark-800 border border-dark-600 rounded-xl p-5"><strong class="text-sky-400">Ejecución</strong><p class="text-sm text-neutral-400 mt-2">Reutiliza la regla real de la aplicación.</p></div>
+<div class="bg-dark-800 border border-dark-600 rounded-xl p-5"><strong class="text-blue-400">Salida</strong><p class="text-sm text-neutral-400 mt-2">Permite verificar el efecto y continuar.</p></div>
 </div>
 </div>
 <div class="bg-primary/10 border border-primary/30 rounded-xl p-6 mb-6">
-<h3 class="font-semibold text-primary">Leia o código como contrato</h3>
-<p class="text-neutral-300 mt-3">Sublinhe onde a entrada é validada, onde o efeito acontece, onde o cancelamento chega e onde a UI é atualizada.</p>
+<h3 class="font-semibold text-primary">Lee el código como contrato</h3>
+<p class="text-neutral-300 mt-3">Subraya dónde se valida la entrada, dónde ocurre el efecto, dónde llega la cancelación y dónde se actualiza la UI.</p>
 </div>
 <details class="bg-dark-800 border border-dark-600 rounded-xl p-6 mb-6">
-<summary class="font-semibold text-sky-400 cursor-pointer">Indo mais fundo: evidência que vale guardar</summary>
+<summary class="font-semibold text-sky-400 cursor-pointer">Profundiza: evidencia que vale la pena guardar</summary>
 <div class="mt-4 space-y-3 text-sm text-neutral-300">
-<p data-inema-block="m2-2-t4-p3">Registre a entrada, o estado anterior, a decisão tomada, o resultado e a alteração visível da página.</p>
-<p data-inema-block="m2-2-t4-p4">Inclua também uma falha provocada e o comportamento observado sem suporte WebMCP.</p>
+<p data-inema-block="m2-2-t4-p3">Registra la entrada, el estado anterior, la decisión tomada, el resultado y el cambio visible en la página.</p>
+<p data-inema-block="m2-2-t4-p4">Incluye también un fallo provocado y el comportamiento observado sin soporte de WebMCP.</p>
 </div>
 </details>
 <div>
-<h3 class="font-semibold text-blue-400">Conceitos-chave</h3>
+<h3 class="font-semibold text-blue-400">Conceptos clave</h3>
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 mt-5">
 <div class="bg-dark-700/60 border border-dark-600 rounded-lg p-4">
 <strong class="text-blue-400 text-xs">01</strong>
@@ -422,14 +422,14 @@
 </div>
 <div class="bg-dark-700/60 border border-dark-600 rounded-lg p-4">
 <strong class="text-blue-400 text-xs">04</strong>
-<p class="text-sm text-neutral-300 mt-2">efeito único</p>
+<p class="text-sm text-neutral-300 mt-2">efecto único</p>
 </div>
 </div>
 </div>
 <div class="flex justify-start mt-7">
 <button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30" data-inema-read-toggle="" type="button">
 <span aria-hidden="true" class="inema-read-icon">○</span>
-<span data-inema-read-label="">Marcar como lido</span>
+<span data-inema-read-label="">Marcar como leído</span>
 </button>
 </div>
 </section>
@@ -437,36 +437,36 @@
 <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
 <div class="flex items-center gap-4 min-w-0">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl flex-shrink-0">5</span>
-<h2 class="text-2xl font-bold">Cancele e limite o tempo</h2>
+<h2 class="text-2xl font-bold">Cancela y limita el tiempo</h2>
 </div>
 <button aria-pressed="false" class="inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 self-start" data-inema-doubt-toggle="" type="button">
 <span aria-hidden="true">?</span>
-<span>Tenho dúvida</span>
+<span>Tengo una duda</span>
 </button>
 </div>
 <div class="inema-prose">
-<p class="text-neutral-300 mb-5 leading-relaxed" data-inema-block="m2-2-t5-p1"><strong class="text-blue-400">O que é:</strong> AbortSignal e timeout encerram trabalho que perdeu relevância ou excedeu a janela operacional.</p>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m2-2-t5-p2"><strong class="text-blue-400">Por que aprender:</strong> Cancelar de verdade preserva recursos e evita que a interface mostre sucesso depois que a pessoa desistiu.</p>
+<p class="text-neutral-300 mb-5 leading-relaxed" data-inema-block="m2-2-t5-p1"><strong class="text-blue-400">Qué es:</strong> AbortSignal y el timeout terminan el trabajo que dejó de ser relevante o superó la ventana operativa.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m2-2-t5-p2"><strong class="text-blue-400">Por qué aprender:</strong> Cancelar de verdad preserva los recursos y evita que la interfaz muestre un éxito después de que la persona desistió.</p>
 </div>
 <div class="grid md:grid-cols-2 gap-6 mb-6">
 <div class="bg-red-900/20 border border-red-500/30 rounded-xl p-6">
-<h3 class="font-semibold text-red-400">Falha provocada</h3>
-<p class="text-neutral-300 mt-3">Execute o cenário com estado ausente, entrada inválida ou capacidade indisponível.</p>
+<h3 class="font-semibold text-red-400">Fallo provocado</h3>
+<p class="text-neutral-300 mt-3">Ejecuta el escenario con estado ausente, entrada no válida o capacidad no disponible.</p>
 </div>
 <div class="bg-blue-900/20 border border-blue-500/30 rounded-xl p-6">
-<h3 class="font-semibold text-blue-400">Recuperação esperada</h3>
-<p class="text-neutral-300 mt-3">A resposta informa o que falhou, o que permanece seguro e qual ação pode continuar.</p>
+<h3 class="font-semibold text-blue-400">Recuperación esperada</h3>
+<p class="text-neutral-300 mt-3">La respuesta informa qué falló, qué sigue siendo seguro y qué acción puede continuar.</p>
 </div>
 </div>
 <div class="bg-dark-800 border border-dark-600 rounded-xl p-6 mb-6">
-<h3 class="font-semibold">Matriz mínima de teste</h3>
+<h3 class="font-semibold">Matriz mínima de pruebas</h3>
 <div class="grid sm:grid-cols-2 gap-4 mt-4 text-sm text-neutral-300">
-<p>✓ caminho feliz reproduzível</p>
-<p>✓ entrada inválida acionável</p>
-<p>✓ cancelamento encerra trabalho</p>
-<p>✓ fallback preserva a jornada</p>
-<p>✓ interface reflete o estado</p>
-<p>✓ backend mantém autorização</p>
+<p>✓ camino feliz reproducible</p>
+<p>✓ entrada inválida accionable</p>
+<p>✓ la cancelación termina el trabajo</p>
+<p>✓ el fallback preserva el recorrido</p>
+<p>✓ la interfaz refleja el estado</p>
+<p>✓ el backend mantiene la autorización</p>
 </div>
 </div>
 <pre class="code-shell mb-6"><code>const signal = AbortSignal.any([
@@ -474,14 +474,14 @@
   AbortSignal.timeout(8000)
 ]);</code></pre>
 <details class="bg-dark-800 border border-dark-600 rounded-xl p-6 mb-6">
-<summary class="font-semibold text-sky-400 cursor-pointer">Indo mais fundo: evidência que vale guardar</summary>
+<summary class="font-semibold text-sky-400 cursor-pointer">Profundiza: evidencia que vale la pena guardar</summary>
 <div class="mt-4 space-y-3 text-sm text-neutral-300">
-<p data-inema-block="m2-2-t5-p3">Registre a entrada, o estado anterior, a decisão tomada, o resultado e a alteração visível da página.</p>
-<p data-inema-block="m2-2-t5-p4">Inclua também uma falha provocada e o comportamento observado sem suporte WebMCP.</p>
+<p data-inema-block="m2-2-t5-p3">Registra la entrada, el estado anterior, la decisión tomada, el resultado y el cambio visible en la página.</p>
+<p data-inema-block="m2-2-t5-p4">Incluye también un fallo provocado y el comportamiento observado sin soporte de WebMCP.</p>
 </div>
 </details>
 <div>
-<h3 class="font-semibold text-blue-400">Conceitos-chave</h3>
+<h3 class="font-semibold text-blue-400">Conceptos clave</h3>
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 mt-5">
 <div class="bg-dark-700/60 border border-dark-600 rounded-lg p-4">
 <strong class="text-blue-400 text-xs">01</strong>
@@ -504,7 +504,7 @@
 <div class="flex justify-start mt-7">
 <button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30" data-inema-read-toggle="" type="button">
 <span aria-hidden="true" class="inema-read-icon">○</span>
-<span data-inema-read-label="">Marcar como lido</span>
+<span data-inema-read-label="">Marcar como leído</span>
 </button>
 </div>
 </section>
@@ -512,75 +512,75 @@
 <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
 <div class="flex items-center gap-4 min-w-0">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl flex-shrink-0">6</span>
-<h2 class="text-2xl font-bold">Teste a recuperação ponta a ponta</h2>
+<h2 class="text-2xl font-bold">Prueba la recuperación de extremo a extremo</h2>
 </div>
 <button aria-pressed="false" class="inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 self-start" data-inema-doubt-toggle="" type="button">
 <span aria-hidden="true">?</span>
-<span>Tenho dúvida</span>
+<span>Tengo una duda</span>
 </button>
 </div>
 <div class="inema-prose">
-<p class="text-neutral-300 mb-5 leading-relaxed" data-inema-block="m2-2-t6-p1"><strong class="text-blue-400">O que é:</strong> A integração deve provar caminho feliz, ordem inválida, retry, cancelamento e mudança concorrente.</p>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m2-2-t6-p2"><strong class="text-blue-400">Por que aprender:</strong> Uma matriz de falhas transforma resiliência em comportamento verificável, não em intenção de arquitetura.</p>
+<p class="text-neutral-300 mb-5 leading-relaxed" data-inema-block="m2-2-t6-p1"><strong class="text-blue-400">Qué es:</strong> La integración debe demostrar el camino feliz, el orden inválido, el reintento, la cancelación y el cambio concurrente.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m2-2-t6-p2"><strong class="text-blue-400">Por qué aprender:</strong> Una matriz de fallos convierte la resiliencia en un comportamiento verificable, no en una intención de arquitectura.</p>
 </div>
 <div class="bg-dark-800 border border-dark-600 rounded-xl p-6 mb-6">
-<h3 class="text-xl font-bold">Exercício de síntese</h3>
+<h3 class="text-xl font-bold">Ejercicio de síntesis</h3>
 <ol class="mt-4 space-y-3 text-neutral-300">
-<li><strong class="text-blue-400">1.</strong> Explique o problema sem usar o nome da tecnologia.</li>
-<li><strong class="text-blue-400">2.</strong> Desenhe o estado anterior e posterior.</li>
-<li><strong class="text-blue-400">3.</strong> Implemente a menor prova funcional.</li>
-<li><strong class="text-blue-400">4.</strong> Provoque uma falha e registre a recuperação.</li>
-<li><strong class="text-blue-400">5.</strong> Entregue código, evidência e uma limitação conhecida.</li>
+<li><strong class="text-blue-400">1.</strong> Explica el problema sin usar el nombre de la tecnología.</li>
+<li><strong class="text-blue-400">2.</strong> Diseña el estado anterior y el posterior.</li>
+<li><strong class="text-blue-400">3.</strong> Implementa la prueba funcional más pequeña.</li>
+<li><strong class="text-blue-400">4.</strong> Provoca un fallo y registra la recuperación.</li>
+<li><strong class="text-blue-400">5.</strong> Entrega código, evidencia y una limitación conocida.</li>
 </ol>
 </div>
 <div class="bg-blue-900/20 border border-blue-500/30 rounded-xl p-6 mb-6">
-<h3 class="text-xl font-bold text-blue-400">Desafio do módulo</h3>
-<p class="text-neutral-300 mt-3">Implementar uma inscrição em etapas que bloqueia chamadas fora de ordem e devolve instruções de recuperação.</p>
+<h3 class="text-xl font-bold text-blue-400">Desafío del módulo</h3>
+<p class="text-neutral-300 mt-3">Implementa una inscripción por etapas que bloquea las llamadas fuera de orden y devuelve instrucciones de recuperación.</p>
 </div>
 <div class="bg-primary/10 border border-primary/30 rounded-xl p-6 mb-6">
-<h3 class="font-semibold text-primary">Critério de Integrator responsável</h3>
-<p class="text-neutral-300 mt-3">A entrega precisa funcionar, explicar seus limites e preservar o caminho humano quando a capacidade experimental não existir.</p>
+<h3 class="font-semibold text-primary">Criterio del Integrator responsable</h3>
+<p class="text-neutral-300 mt-3">La entrega debe funcionar, explicar sus límites y preservar la opción humana cuando la capacidad experimental no esté disponible.</p>
 </div>
 <pre class="code-shell mb-6"><code>confirmar antes de iniciar -&gt; recovery: iniciar_inscricao
 retry com mesma chave -&gt; mesmo resultado
 timeout -&gt; interface volta ao estado estável</code></pre>
 <details class="bg-dark-800 border border-dark-600 rounded-xl p-6 mb-6">
-<summary class="font-semibold text-sky-400 cursor-pointer">Indo mais fundo: evidência que vale guardar</summary>
+<summary class="font-semibold text-sky-400 cursor-pointer">Profundiza: evidencia que vale la pena guardar</summary>
 <div class="mt-4 space-y-3 text-sm text-neutral-300">
-<p data-inema-block="m2-2-t6-p3">Registre a entrada, o estado anterior, a decisão tomada, o resultado e a alteração visível da página.</p>
-<p data-inema-block="m2-2-t6-p4">Inclua também uma falha provocada e o comportamento observado sem suporte WebMCP.</p>
+<p data-inema-block="m2-2-t6-p3">Registra la entrada, el estado anterior, la decisión tomada, el resultado y el cambio visible en la página.</p>
+<p data-inema-block="m2-2-t6-p4">Incluye también un fallo provocado y el comportamiento observado sin soporte de WebMCP.</p>
 </div>
 </details>
 <div>
-<h3 class="font-semibold text-blue-400">Conceitos-chave</h3>
+<h3 class="font-semibold text-blue-400">Conceptos clave</h3>
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 mt-5">
 <div class="bg-dark-700/60 border border-dark-600 rounded-lg p-4">
 <strong class="text-blue-400 text-xs">01</strong>
-<p class="text-sm text-neutral-300 mt-2">cenários</p>
+<p class="text-sm text-neutral-300 mt-2">escenarios</p>
 </div>
 <div class="bg-dark-700/60 border border-dark-600 rounded-lg p-4">
 <strong class="text-blue-400 text-xs">02</strong>
-<p class="text-sm text-neutral-300 mt-2">evidência</p>
+<p class="text-sm text-neutral-300 mt-2">evidencia</p>
 </div>
 <div class="bg-dark-700/60 border border-dark-600 rounded-lg p-4">
 <strong class="text-blue-400 text-xs">03</strong>
-<p class="text-sm text-neutral-300 mt-2">reprodução</p>
+<p class="text-sm text-neutral-300 mt-2">reproducción</p>
 </div>
 <div class="bg-dark-700/60 border border-dark-600 rounded-lg p-4">
 <strong class="text-blue-400 text-xs">04</strong>
-<p class="text-sm text-neutral-300 mt-2">regressão</p>
+<p class="text-sm text-neutral-300 mt-2">regresión</p>
 </div>
 </div>
 </div>
 <div class="flex justify-start mt-7">
 <button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30" data-inema-read-toggle="" type="button">
 <span aria-hidden="true" class="inema-read-icon">○</span>
-<span data-inema-read-label="">Marcar como lido</span>
+<span data-inema-read-label="">Marcar como leído</span>
 </button>
 </div>
 </section>
-<section class="mb-12"><div class="bg-gradient-to-br from-blue-900/40 via-dark-800 to-dark-800 rounded-xl border border-blue-500/30 p-8"><h2 class="text-2xl font-bold mb-6">📦 Entrega do módulo</h2><p class="text-neutral-300 mb-6">Implementar uma inscrição em etapas que bloqueia chamadas fora de ordem e devolve instruções de recuperação.</p><div class="grid md:grid-cols-2 gap-6 mb-8"><div class="bg-blue-900/20 border border-blue-500/30 rounded-xl p-5"><h3 class="text-blue-400 font-semibold">Critério de aceite</h3><p class="text-neutral-300 text-sm mt-2">A entrega funciona com suporte WebMCP e mantém o caminho manual quando a API não existe.</p></div><div class="bg-sky-900/20 border border-sky-500/30 rounded-xl p-5"><h3 class="text-sky-400 font-semibold">Evidência</h3><p class="text-neutral-300 text-sm mt-2">Inclua código, cenário testado, resultado observado e uma limitação conhecida.</p></div></div><div class="flex justify-start flex-wrap gap-3"><a class="px-5 py-3 rounded-lg bg-dark-700 hover:bg-dark-600" href="../../index.html">← Voltar para a trilha</a><a class="px-5 py-3 rounded-lg bg-blue-600 hover:bg-blue-500 text-white" href="modulo-2-3.html">Próximo módulo: 1.3 →</a></div></div></section>
-<section class="border border-dark-600 rounded-xl p-6"><h2 class="text-xl font-bold">Fontes técnicas</h2><ul class="mt-4 space-y-2 text-sm"><li><a class="text-sky-400 hover:text-sky-300" href="https://github.com/webmachinelearning/webmcp" rel="noreferrer" target="_blank">Draft e repositório oficial WebMCP</a></li><li><a class="text-sky-400 hover:text-sky-300" href="https://webmachinelearning.github.io/webmcp/" rel="noreferrer" target="_blank">Especificação renderizada</a></li><li class="text-neutral-400">Snapshot oficial: 26/08/2026 · commit 41d12f0. A API declarativa permanece experimental; valide o draft antes de produção.</li></ul></section>
+<section class="mb-12"><div class="bg-gradient-to-br from-blue-900/40 via-dark-800 to-dark-800 rounded-xl border border-blue-500/30 p-8"><h2 class="text-2xl font-bold mb-6">📦 Entrega del módulo</h2><p class="text-neutral-300 mb-6">Implementa una inscripción por etapas que bloquea las llamadas fuera de orden y devuelve instrucciones de recuperación.</p><div class="grid md:grid-cols-2 gap-6 mb-8"><div class="bg-blue-900/20 border border-blue-500/30 rounded-xl p-5"><h3 class="text-blue-400 font-semibold">Criterio de aceptación</h3><p class="text-neutral-300 text-sm mt-2">La entrega funciona con soporte de WebMCP y mantiene la opción manual cuando la API no existe.</p></div><div class="bg-sky-900/20 border border-sky-500/30 rounded-xl p-5"><h3 class="text-sky-400 font-semibold">Evidencia</h3><p class="text-neutral-300 text-sm mt-2">Incluye código, escenario probado, resultado observado y una limitación conocida.</p></div></div><div class="flex justify-start flex-wrap gap-3"><a class="px-5 py-3 rounded-lg bg-dark-700 hover:bg-dark-600" href="../../index.html">← Volver a la ruta</a><a class="px-5 py-3 rounded-lg bg-blue-600 hover:bg-blue-500 text-white" href="modulo-2-3.html">Próximo módulo: 1.3 →</a></div></div></section>
+<section class="border border-dark-600 rounded-xl p-6"><h2 class="text-xl font-bold">Fuentes técnicas</h2><ul class="mt-4 space-y-2 text-sm"><li><a class="text-sky-400 hover:text-sky-300" href="https://github.com/webmachinelearning/webmcp" rel="noreferrer" target="_blank">Draft y repositorio oficial de WebMCP</a></li><li><a class="text-sky-400 hover:text-sky-300" href="https://webmachinelearning.github.io/webmcp/" rel="noreferrer" target="_blank">Especificación renderizada</a></li><li class="text-neutral-400">Snapshot oficial: 26/08/2026 · commit 41d12f0. La API declarativa sigue siendo experimental; valida el draft antes de producción.</li></ul></section>
 </article>
 </div>
 </main>
@@ -592,6 +592,6 @@ function closeModal(){document.querySelectorAll('.modal').forEach(m=>m.classList
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
 const tt=document.getElementById('theme-toggle'),di=document.getElementById('theme-toggle-dark-icon'),li=document.getElementById('theme-toggle-light-icon');function syncTheme(){if(document.documentElement.classList.contains('dark')){li?.classList.remove('hidden');di?.classList.add('hidden')}else{di?.classList.remove('hidden');li?.classList.add('hidden')}}syncTheme();tt?.addEventListener('click',()=>{const next=document.documentElement.classList.contains('dark')?'claro':'inema-dark';if(window.INEMA&&typeof window.INEMA.setPref==='function')window.INEMA.setPref('theme',next);else{document.documentElement.classList.toggle('dark');localStorage.setItem('theme',next==='claro'?'light':'dark')}syncTheme()});
 </script>
-<script src="../../assets/learn.js"></script>
+<script src="../../../assets/learn.js"></script>
 <script>if(window.INEMA&&typeof window.INEMA.init==='function')window.INEMA.init();</script>
 </body></html>
